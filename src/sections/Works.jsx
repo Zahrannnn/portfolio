@@ -154,7 +154,7 @@ const Works = () => {
             </div>
             {/* mobile preview image */}
             {project.image && (
-            <div className="relative flex items-center justify-center px-10 md:hidden h-[300px]">
+            <div className="relative flex items-center justify-center px-10 md:hidden h-[200px]">
               
               <img
                 src={project.image}
