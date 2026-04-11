@@ -84,7 +84,7 @@ export const projects = [
     description:
       "Full-featured multi-tenant CRM built as a graduation project. Features role-based access, VAPI voice AI agent, Microsoft SignalR real-time notifications, Gemini AI chatbot, appointment scheduling, task management, and Paymob payment integration across four languages.",
     href: "https://wasla-crm.vercel.app/en/login",
-    image: "/assets/projects/wasla.png",
+    image: "/assets/projects/wasla.webp",
     frameworks: [
       { id: 1, name: "Next.js 15" },
       { id: 2, name: "TypeScript" },
@@ -102,7 +102,7 @@ export const projects = [
     description:
       "Feature-driven e-learning platform with 3D interactive labs, structured learning paths, quiz engine, collaborative rooms, Google OAuth, subscription/payment flow, and an admin dashboard for content management.",
     href: "https://stagging-cylearn.vercel.app/",
-    image: "/assets/projects/cyrus.png",
+    image: "/assets/projects/cyrus.webp",
     frameworks: [
       { id: 1, name: "React 19" },
       { id: 2, name: "TypeScript" },
@@ -119,7 +119,7 @@ export const projects = [
     description:
       "Production frontend for real-time tailgating anomaly detection with live MJPEG video streaming, license plate OCR, MOT API integration, role-based access control, and a historical incident dashboard.",
     href: "",
-    image: "/assets/projects/tailgating.png",
+    image: "/assets/projects/tailgating.webp",
     frameworks: [
       { id: 1, name: "React 18" },
       { id: 2, name: "TypeScript" },
@@ -135,7 +135,7 @@ export const projects = [
     description:
       "Multi-mode 3D space viewer (Dollhouse, Panorama, Split) for exploring building capture datasets. Features room-aware navigation, panorama markers, progressive loading, and data-driven scene setup from JSON transform metadata.",
     href: "",
-    image: "/assets/projects/3d-modelling.png",
+    image: "/assets/projects/3d-modelling.webp",
     frameworks: [
       { id: 1, name: "React 19" },
       { id: 2, name: "TypeScript" },
@@ -152,7 +152,7 @@ export const projects = [
     description:
       "Multilingual admin/staff CRM dashboard with rich data tables, chart analytics, rich-text editing, TanStack Query mutations, and real-time data sync across Arabic and English locales.",
     href: "",
-    image: "/assets/projects/nedx.png",
+    image: "/assets/projects/nedx.webp",
     frameworks: [
       { id: 1, name: "Next.js 15" },
       { id: 2, name: "TypeScript" },
@@ -169,7 +169,7 @@ export const projects = [
     description:
       "High-performance multilingual marketing website with advanced scroll animations, GSAP/Lenis-powered micro-interactions, lead capture form with Zod validation, and i18n routing.",
     href: "https://ned-swiss.ch/",
-    image: "/assets/projects/nedswiss.png",
+    image: "/assets/projects/nedswiss.webp",
     frameworks: [
       { id: 1, name: "Next.js 15" },
       { id: 2, name: "TypeScript" },
@@ -186,7 +186,7 @@ export const projects = [
     description:
       "Full invoice lifecycle management system with creation, editing, filtering, and status tracking. Built with reusable form components, Zod validation, and animated transitions.",
     href: "",
-    image: "/assets/projects/agl-invoice.png",
+    image: "/assets/projects/agl-invoice.webp",
     frameworks: [
       { id: 1, name: "React 19" },
       { id: 2, name: "TypeScript" },
@@ -202,7 +202,7 @@ export const projects = [
     description:
       "Frontend interface for Arabic/multilingual NLP keyword extraction and annotation, integrating Label Studio for data labeling workflows with file upload, YAML/markdown output, and exportable annotated datasets.",
     href: "",
-     image: "/assets/projects/qalam.png",
+     image: "/assets/projects/qalam.webp",
     frameworks: [
       { id: 1, name: "React 19" },
       { id: 2, name: "TypeScript" },
@@ -250,7 +250,7 @@ export const projects = [
     description:
       "Multilingual translation platform (Arabic, English, French) with Paymob payment gateway, credit system with daily quota, admin dashboard for transaction monitoring, and blog management module.",
     href: "",
-    image: "/assets/projects/translaxable.png",
+    image: "/assets/projects/translaxable.webp",
     frameworks: [
       { id: 1, name: "Next.js" },
       { id: 2, name: "TypeScript" },
@@ -269,35 +269,35 @@ export const socials = [
 export const toolsData = [
   {
     name: "Vs Code",
-    icon: "/assets/tools/vscode.png",
+    icon: "/assets/tools/vscode.webp",
   },
   {
     name: "Figma",
-    icon: "/assets/tools/figma.png",
+    icon: "/assets/tools/figma.webp",
   },
   {
     name: "Github",
-    icon: "/assets/tools/github.png",
+    icon: "/assets/tools/github.webp",
   },
   {
     name: "Git",
-    icon: "/assets/tools/git.png",
+    icon: "/assets/tools/git.webp",
   },
   {
     name: "GSAP",
-    icon: "/assets/tools/gsap.png",
+    icon: "/assets/tools/gsap.webp",
   },
   {
     name: "Claude",
-    icon: "/assets/tools/claude.png",
+    icon: "/assets/tools/claude.webp",
   },
 
   {
     name: "Next.js",
-    icon: "/assets/tools/next.png",
+    icon: "/assets/tools/next.webp",
   },
   {
     name: "React",
-    icon: "/assets/tools/react.png",
+    icon: "/assets/tools/react.webp",
   },
 ];
