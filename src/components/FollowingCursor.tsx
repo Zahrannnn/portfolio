@@ -44,7 +44,7 @@ export default function FollowingCursor() {
   }, [smoothX, smoothY]);
   return (
     <motion.div
-      className={`pointer-events-none fixed left-0 top-0 z-[9999] h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent ring-1 ring-white/75 mix-blend-color transition-opacity duration-200 ease-out mix-blend-difference ${
+      className={`pointer-events-none fixed left-0 top-0 z-[9999] hidden md:block h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent ring-1 ring-white/75 mix-blend-color transition-opacity duration-200 ease-out mix-blend-difference ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{

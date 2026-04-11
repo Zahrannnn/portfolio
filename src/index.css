@@ -113,6 +113,15 @@ body {
   font-family: var(--font-amiamie);
 }
 
+/* Hide default cursor on desktop where the custom following cursor is shown */
+@media (min-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
 @utility clip-path {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
