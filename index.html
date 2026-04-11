@@ -51,7 +51,16 @@
     <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
+    <!-- Google Fonts: load async (non-render-blocking) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" /></noscript>
+
+    <!-- Preload critical custom font to shorten the dependency chain -->
+    <link rel="preload" href="/fonts/ttf/Amiamie-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/ttf/Amiamie-Light.ttf" as="font" type="font/ttf" crossorigin />
+
     <!-- Hero 3D model: start download before JS parses Three -->
     <link rel="preload" href="/models/Planet.glb" as="fetch" crossorigin="anonymous" />
     
