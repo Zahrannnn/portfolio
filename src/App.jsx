@@ -1,33 +1,27 @@
-import React, { Suspense, lazy, useCallback, useState } from "react";
+import React, { Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation,
 } from "react-router-dom";
 import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
 import ReactLenis from "lenis/react";
-import Preloader from "./components/Preloader";
 import NotFound from "./components/NotFound";
-import FollowingCursor from "./components/FollowingCursor";
 import SEO from "./components/SEO";
 
 const HomeBelowHero = lazy(() => import("./sections/HomeBelowHero"));
 
 const BelowFoldFallback = () => (
-  <div
-    className="min-h-[160vh] w-full bg-primary"
-    aria-hidden
-  />
+  <div className="min-h-[160vh] w-full bg-primary" aria-hidden />
 );
 
-const MainContent = ({ onHeroProgress }) => {
+const MainContent = () => {
   return (
     <>
       <SEO pageKey="home" />
       <Navbar />
-      <Hero onHeroProgress={onHeroProgress} />
+      <Hero />
       <Suspense fallback={<BelowFoldFallback />}>
         <HomeBelowHero />
       </Suspense>
@@ -36,19 +30,6 @@ const MainContent = ({ onHeroProgress }) => {
 };
 
 function AppShell() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-
-  const [heroLoadProgress, setHeroLoadProgress] = useState(0);
-  const [introComplete, setIntroComplete] = useState(false);
-
-  const heroReady = !isHome || heroLoadProgress === 100;
-  const isReady = heroReady && introComplete;
-
-  const handleIntroComplete = useCallback(() => {
-    setIntroComplete(true);
-  }, []);
-
   return (
     <ReactLenis
       root
@@ -69,21 +50,10 @@ function AppShell() {
         gestureOrientation: "vertical",
       }}
     >
-      {!isReady && <Preloader onIntroComplete={handleIntroComplete} />}
-      <FollowingCursor />
-      <div
-        className={`${
-          isReady ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-1000`}
-      >
-        <Routes>
-          <Route
-            path="/"
-            element={<MainContent onHeroProgress={setHeroLoadProgress} />}
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<MainContent />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </ReactLenis>
   );
 }

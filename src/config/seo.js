@@ -1,165 +1,151 @@
-// SEO Configuration for Mohamed Ossama Zahran Portfolio
+// SEO Configuration for Mohamed Zahran Portfolio
 export const seoConfig = {
-  // Basic site information
-  siteName: "Mohamed Ossama Zahran Portfolio",
-  siteUrl: "https://mohamedossama.dev",
-  author: "Mohamed Ossama Zahran",
-  
-  // Default meta information
-  defaultTitle: "Mohamed Ossama Zahran - Full-Stack Developer & Designer",
-  titleTemplate: "%s | Mohamed Ossama Zahran",
-  defaultDescription: "Passionate Full-Stack Developer specializing in Next.js, React, Three.js, and modern web technologies. I build scalable, high-performance applications from prototype to production with stunning 3D experiences.",
-  
-  // Keywords for SEO
+  siteName: "Mohamed Zahran Portfolio",
+  siteUrl: "https://mohamed-zahrann.vercel.app",
+  author: "Mohamed Zahran",
+
+  defaultTitle: "Mohamed Zahran - Frontend Engineer at RICOH Europe",
+  titleTemplate: "%s | Mohamed Zahran",
+  defaultDescription:
+    "Frontend engineer at RICOH Europe (formerly Corelia). Building product UIs, marketplace systems, and agentic workflows with React, Next.js, TypeScript, and thoughtful motion.",
+
   keywords: [
-    "Mohamed Ossama Zahran",
-    "Full-Stack Developer",
-    "Frontend Developer", 
+    "Mohamed Zahran",
+    "Frontend Engineer",
+    "RICOH Europe",
     "React Developer",
     "Next.js Developer",
-    "Three.js",
-    "3D Web Development",
-    "JavaScript",
     "TypeScript",
-    "Web Designer",
+    "Three.js",
+    "GSAP",
     "Portfolio",
     "Egypt Developer",
-    "GSAP Animation",
-    "UI/UX Designer",
-    "Web Development",
-    "Modern Web Technologies",
-    "Responsive Design",
-    "Performance Optimization",
-    "Creative Developer"
+    "UI/UX",
+    "Agentic systems",
   ],
-  
-  // Social media handles
+
   social: {
-    twitter: "@mohamedossama",
-    github: "https://github.com/mohamedossama",
-    linkedin: "https://linkedin.com/in/mohamedossama",
+    twitter: "@zahranzone",
+    github: "https://github.com/Zahrannnn",
+    linkedin: "https://www.linkedin.com/in/mohamed-zahran-383859222/",
     email: "mohamedzahrann0@gmail.com",
-    phone: "+20 109 208 8922"
+    phone: "+20 109 208 8922",
   },
-  
-  // Open Graph default image
+
   ogImage: {
-    url: "https://mohamedossama.dev/og-image.jpg",
+    url: "https://mohamed-zahrann.vercel.app/og-image.jpg",
     width: 1200,
     height: 630,
-    alt: "Mohamed Ossama Zahran - Full-Stack Developer Portfolio"
+    alt: "Mohamed Zahran - Frontend Engineer Portfolio",
   },
-  
-  // Theme colors
-  themeColor: "#cfa355",
-  backgroundColor: "#000000",
-  
-  // Structured data for different pages
+
+  themeColor: "#06d6a0",
+  backgroundColor: "#e5e5e0",
+
   structuredData: {
     person: {
       "@context": "https://schema.org",
       "@type": "Person",
-      name: "Mohamed Ossama Zahran",
-      jobTitle: "Full-Stack Developer",
-      description: "Passionate Full-Stack Developer specializing in Next.js, React, Three.js, and modern web technologies.",
-      url: "https://mohamedossama.dev",
-      image: "https://mohamedossama.dev/og-image.jpg",
+      name: "Mohamed Zahran",
+      jobTitle: "Frontend Engineer",
+      description:
+        "Frontend engineer at RICOH Europe building product UIs and agentic systems with React, Next.js, and TypeScript.",
+      url: "https://mohamed-zahrann.vercel.app",
+      image: "https://mohamed-zahrann.vercel.app/og-image.jpg",
       sameAs: [
-        "https://github.com/mohamedossama",
-        "https://linkedin.com/in/mohamedossama",
-        "https://twitter.com/mohamedossama"
+        "https://github.com/Zahrannnn",
+        "https://www.linkedin.com/in/mohamed-zahran-383859222/",
+        "https://www.instagram.com/zahranzone/",
       ],
       knowsAbout: [
         "JavaScript",
-        "TypeScript", 
+        "TypeScript",
         "React",
         "Next.js",
         "Three.js",
-        "Node.js",
-        "Full-Stack Development",
         "Frontend Development",
-        "Web Development",
-        "3D Web Development",
-        "UI/UX Design",
         "GSAP",
         "Framer Motion",
-        "TailwindCSS"
+        "TailwindCSS",
       ],
       alumniOf: "Software Engineering",
       worksFor: {
         "@type": "Organization",
-        "name": "Freelance Developer"
+        name: "RICOH Europe",
       },
       email: "mohamedzahrann0@gmail.com",
-      telephone: "+20 109 208 8922"
+      telephone: "+20 109 208 8922",
     },
-    
+
     website: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Mohamed Ossama Zahran Portfolio",
-      description: "Professional portfolio showcasing full-stack development projects and 3D web experiences",
-      url: "https://mohamedossama.dev",
+      name: "Mohamed Zahran Portfolio",
+      description:
+        "Portfolio of Mohamed Zahran, frontend engineer at RICOH Europe.",
+      url: "https://mohamed-zahrann.vercel.app",
       author: {
         "@type": "Person",
-        name: "Mohamed Ossama Zahran"
+        name: "Mohamed Zahran",
       },
       inLanguage: "en-US",
       copyrightYear: new Date().getFullYear(),
-      genre: "Portfolio"
-    }
+      genre: "Portfolio",
+    },
   },
-  
-  // Page-specific SEO configurations
+
   pages: {
     home: {
-      title: "Mohamed Ossama Zahran - Full-Stack Developer & Designer",
-      description: "Passionate Full-Stack Developer specializing in Next.js, React, Three.js, and modern web technologies. I build scalable, high-performance applications from prototype to production with stunning 3D experiences.",
+      title: "Mohamed Zahran - Frontend Engineer at RICOH Europe",
+      description:
+        "Frontend engineer at RICOH Europe. Product UIs, marketplace architecture, and agentic systems with React, Next.js, and TypeScript.",
       path: "/",
-      priority: 1.0
+      priority: 1.0,
     },
     services: {
-      title: "Services - Full-Stack Development & 3D Web Experiences",
-      description: "Professional web development services including React/Next.js development, 3D web experiences with Three.js, UI/UX design, and modern web architecture solutions.",
+      title: "Services - Frontend Development & Interactive Experiences",
+      description:
+        "Frontend development, UI/UX, modern web architecture, and interactive experiences with React, Next.js, GSAP, and Three.js.",
       path: "/#services",
-      priority: 0.8
+      priority: 0.8,
     },
     about: {
-      title: "About Mohamed Ossama Zahran - Full-Stack Developer",
-      description: "Learn about Mohamed Ossama Zahran, a passionate full-stack developer with expertise in modern web technologies, 3D development, and creating high-performance applications.",
-      path: "/#about", 
-      priority: 0.8
+      title: "About Mohamed Zahran - Frontend Engineer",
+      description:
+        "Frontend engineer at RICOH Europe (formerly Corelia), focused on system design, TypeScript, and shipping polished product interfaces.",
+      path: "/#about",
+      priority: 0.8,
     },
     work: {
-      title: "Portfolio Projects - Modern Web Applications & 3D Experiences",
-      description: "Explore my portfolio of modern web applications, 3D interactive experiences, and full-stack projects built with React, Next.js, Three.js, and cutting-edge technologies.",
+      title: "Portfolio Projects - Product UIs & Client Work",
+      description:
+        "Selected projects including Wasla CRM, Nabdh, RICOH Europe 3D work, OZ Storefront, and freelance client sites.",
       path: "/#work",
-      priority: 0.9
+      priority: 0.9,
     },
     contact: {
-      title: "Contact Mohamed Ossama Zahran - Full-Stack Developer",
-      description: "Get in touch for web development projects, consultations, or collaborations. Specializing in React, Next.js, Three.js, and modern web technologies.",
+      title: "Contact Mohamed Zahran",
+      description:
+        "Get in touch for frontend engineering, product UI work, or collaborations.",
       path: "/#contact",
-      priority: 0.7
-    }
-  }
+      priority: 0.7,
+    },
+  },
 };
 
-// Helper function to generate page-specific SEO props
 export const getPageSEO = (pageKey) => {
   const page = seoConfig.pages[pageKey];
   if (!page) return seoConfig;
-  
+
   return {
     ...seoConfig,
     title: page.title,
     description: page.description,
     url: `${seoConfig.siteUrl}${page.path}`,
-    canonical: `${seoConfig.siteUrl}${page.path}`
+    canonical: `${seoConfig.siteUrl}${page.path}`,
   };
 };
 
-// Helper function to generate keywords string
 export const getKeywordsString = (additionalKeywords = []) => {
   return [...seoConfig.keywords, ...additionalKeywords].join(", ");
-}; 
+};

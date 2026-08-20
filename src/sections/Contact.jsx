@@ -62,9 +62,8 @@ const Contact = () => {
               <div className="w-full h-px my-2 bg-white/30" />
               <div className="flex flex-wrap gap-2">
                 {socials.map((social, index) => (
-                  <div className="flex items-center gap-2">
+                  <div key={social.name} className="flex items-center gap-2">
                   <a
-                    key={index}
                     href={social.href}
                     className="text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
                   >

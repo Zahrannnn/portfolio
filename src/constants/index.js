@@ -77,6 +77,7 @@ export const servicesData = [
     ],
   },
 ];
+
 export const projects = [
   {
     id: 1,
@@ -98,6 +99,33 @@ export const projects = [
   },
   {
     id: 2,
+    name: "Nabdh — Healthcare Marketplace",
+    description:
+      "Real-time home nursing marketplace for Egypt. NestJS modular monolith, MongoDB geospatial queries, 18-state booking machine, outbox events, SOS dispatch, scheduled visits, and Egyptian payment integrations.",
+    href: "https://github.com/Zahrannnn/nabdh-backend",
+    image: "",
+    frameworks: [
+      { id: 1, name: "NestJS" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "MongoDB" },
+      { id: 4, name: "Outbox pattern" },
+    ],
+  },
+  {
+    id: 3,
+    name: "Medical System (gov UI)",
+    description:
+      "Government medical system UI. Collaborator on the TypeScript frontend with production deployment.",
+    href: "https://medical-system-gov.vercel.app",
+    image: "",
+    frameworks: [
+      { id: 1, name: "TypeScript" },
+      { id: 2, name: "React" },
+      { id: 3, name: "Collaborator" },
+    ],
+  },
+  {
+    id: 4,
     name: "CyrusLearn – Interactive Learning Platform",
     description:
       "Feature-driven e-learning platform with 3D interactive labs, structured learning paths, quiz engine, collaborative rooms, Google OAuth, subscription/payment flow, and an admin dashboard for content management.",
@@ -114,11 +142,11 @@ export const projects = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     name: "Tailgating Detection System",
     description:
       "Production frontend for real-time tailgating anomaly detection with live MJPEG video streaming, license plate OCR, MOT API integration, role-based access control, and a historical incident dashboard.",
-    href: "",
+    href: "https://github.com/Zahrannnn/tailgating-frontend",
     image: "/assets/projects/tailgating.webp",
     frameworks: [
       { id: 1, name: "React 18" },
@@ -130,11 +158,11 @@ export const projects = [
     ],
   },
   {
-    id: 4,
-    name: "CORELIA 3D Building Viewer",
+    id: 6,
+    name: "RICOH Europe — 3D Building Viewer",
     description:
-      "Multi-mode 3D space viewer (Dollhouse, Panorama, Split) for exploring building capture datasets. Features room-aware navigation, panorama markers, progressive loading, and data-driven scene setup from JSON transform metadata.",
-    href: "",
+      "Shipped at RICOH Europe (formerly Corelia). Multi-mode 3D space viewer (Dollhouse, Panorama, Split) for building capture datasets, with room-aware navigation, panorama markers, and progressive loading.",
+    href: "https://www.ricoh-europe.com",
     image: "/assets/projects/3d-modelling.webp",
     frameworks: [
       { id: 1, name: "React 19" },
@@ -147,11 +175,38 @@ export const projects = [
     ],
   },
   {
-    id: 5,
+    id: 7,
+    name: "OZ Storefront",
+    description:
+      "Arabic RTL e-commerce storefront with a Soft Brutalism Next.js interface.",
+    href: "https://oz-storefront.vercel.app",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "RTL" },
+      { id: 4, name: "Tailwind CSS" },
+    ],
+  },
+  {
+    id: 8,
+    name: "AI Job Searcher",
+    description:
+      "Agent pipeline that scrapes job boards, scores fit, and generates tailored LaTeX resumes and cover letters, with a dashboard for one-click PDF export.",
+    href: "https://github.com/Zahrannnn/ai-job-searcher",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Python" },
+      { id: 2, name: "Claude Code" },
+      { id: 3, name: "LaTeX" },
+    ],
+  },
+  {
+    id: 9,
     name: "NedSwiss CRM Dashboard",
     description:
       "Multilingual admin/staff CRM dashboard with rich data tables, chart analytics, rich-text editing, TanStack Query mutations, and real-time data sync across Arabic and English locales.",
-    href: "",
+    href: "https://stage-nedswiss.vercel.app/",
     image: "/assets/projects/nedx.webp",
     frameworks: [
       { id: 1, name: "Next.js 15" },
@@ -164,7 +219,7 @@ export const projects = [
     ],
   },
   {
-    id: 6,
+    id: 10,
     name: "NedSwiss Marketing Website",
     description:
       "High-performance multilingual marketing website with advanced scroll animations, GSAP/Lenis-powered micro-interactions, lead capture form with Zod validation, and i18n routing.",
@@ -181,11 +236,11 @@ export const projects = [
     ],
   },
   {
-    id: 7,
+    id: 11,
     name: "AGL Invoice Management System",
     description:
       "Full invoice lifecycle management system with creation, editing, filtering, and status tracking. Built with reusable form components, Zod validation, and animated transitions.",
-    href: "",
+    href: "https://github.com/Zahrannnn",
     image: "/assets/projects/agl-invoice.webp",
     frameworks: [
       { id: 1, name: "React 19" },
@@ -197,29 +252,27 @@ export const projects = [
     ],
   },
   {
-    id: 8,
+    id: 12,
     name: "Qalam Vision – NLP Keyword Extraction",
     description:
       "Frontend interface for Arabic/multilingual NLP keyword extraction and annotation, integrating Label Studio for data labeling workflows with file upload, YAML/markdown output, and exportable annotated datasets.",
-    href: "",
-     image: "/assets/projects/qalam.webp",
+    href: "https://github.com/Zahrannnn",
+    image: "/assets/projects/qalam.webp",
     frameworks: [
       { id: 1, name: "React 19" },
       { id: 2, name: "TypeScript" },
       { id: 3, name: "TanStack Query" },
       { id: 4, name: "Shadcn UI" },
       { id: 5, name: "Tailwind CSS" },
-      // { id: 6, name: "next-intl" },
     ],
   },
-
   {
-    id: 10,
+    id: 13,
     name: "Wasla Feedback Moderation API",
     description:
       "AI microservice for multilingual toxicity and hate-speech detection using dual-model architecture (DistilBERT + DeHateBERT for Arabic) with an optional Mistral-7B LLM verification layer for grey-zone predictions.",
     href: "https://mohameddda-moderator-api.hf.space/docs",
-     image: "",
+    image: "",
     frameworks: [
       { id: 1, name: "Python" },
       { id: 2, name: "FastAPI" },
@@ -228,7 +281,7 @@ export const projects = [
     ],
   },
   {
-    id: 11,
+    id: 14,
     name: "Wasla CRM – Backend API",
     description:
       "Clean 3-layer .NET 8 backend (API/CORE/EF) with multi-tenant JWT auth, SignalR real-time notifications, Hangfire background jobs, Stripe webhooks, QuestPDF offer generation, and 15 REST controllers.",
@@ -243,13 +296,12 @@ export const projects = [
       { id: 6, name: "SQL Server" },
     ],
   },
-
   {
-    id: 17,
+    id: 15,
     name: "AI-Powered Translation Platform",
     description:
       "Multilingual translation platform (Arabic, English, French) with Paymob payment gateway, credit system with daily quota, admin dashboard for transaction monitoring, and blog management module.",
-    href: "",
+    href: "https://github.com/Zahrannnn",
     image: "/assets/projects/translaxable.webp",
     frameworks: [
       { id: 1, name: "Next.js" },
@@ -259,13 +311,73 @@ export const projects = [
       { id: 5, name: "Tailwind CSS" },
     ],
   },
+  {
+    id: 16,
+    name: "ARME Egypt",
+    description: "Client marketing site for ARME Egypt.",
+    href: "https://www.armegypt.com/",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Frontend" },
+      { id: 2, name: "Client work" },
+    ],
+  },
+  {
+    id: 17,
+    name: "Standby Egypt",
+    description: "Client website for Standby Egypt.",
+    href: "https://standby-eg.com/",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Frontend" },
+      { id: 2, name: "Client work" },
+    ],
+  },
+  {
+    id: 18,
+    name: "Best Valet",
+    description: "Client valet service web experience.",
+    href: "https://best-valet.vercel.app/",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "Client work" },
+    ],
+  },
+  {
+    id: 19,
+    name: "Planit Software",
+    description: "Client product site for Planit Software.",
+    href: "https://planit-software.vercel.app/",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Frontend" },
+      { id: 2, name: "Client work" },
+    ],
+  },
+  {
+    id: 20,
+    name: "Notecker",
+    description: "Client web app for Notecker.",
+    href: "https://notecker.vercel.app/",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Frontend" },
+      { id: 2, name: "Client work" },
+    ],
+  },
 ];
 
 export const socials = [
   { name: "Instagram", href: "https://www.instagram.com/zahranzone/" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/zahran-numberone/" },
-  { name: "GitHub", href: "https://github.com/ZAHRAN88" },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/mohamed-zahran-383859222/",
+  },
+  { name: "GitHub", href: "https://github.com/Zahrannnn" },
+  { name: "Discord", href: "https://discord.gg/zahran5045" },
 ];
+
 export const toolsData = [
   {
     name: "Vs Code",

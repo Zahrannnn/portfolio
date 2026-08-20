@@ -7,17 +7,15 @@ import ScrollReveal from "../components/TextAnimations/ScrollReveal/ScrollReveal
 import RevealText from "../components/TextAnimations/RevealText";
 
 const About = () => {
-  const text = `Passionate about clean architecture
-    I build scalable, high-performance solutions
-    from prototype to production`;
-  const aboutText = `I’m a passionate Full-Stack Developer with strong experience in both frontend and backend technologies.
-   I build modern web applications using Next.js, Tailwind CSS, ShadCN UI, Framer Motion, and GSAP on the frontend,
-    and work with Prisma ORM, Neon DB, and TanStack Query on the backend.
-    I’m also comfortable integrating AI APIs like Gemini,
-    and always open to learning and using new tools that enhance user experience and developer productivity.
-    Beyond code, I enjoy teaching and giving crash courses to help others grow in tech—whether it’s Tailwind, CSS tricks,
-     or best practices in frontend development.
-    Let’s connect and build cool things!`;
+  const text = `Frontend engineer at RICOH Europe
+    Crafting product UIs and agentic systems
+    with TypeScript across the stack`;
+  const aboutText = `I’m Mohamed Zahran, a frontend engineer at RICOH Europe (formerly Corelia).
+    I focus on system design, marketplace architecture, and shipping polished React and Next.js interfaces.
+    Day to day that means TypeScript, performance-minded UI, GSAP and Framer Motion when motion earns its place,
+    and agentic tooling when it helps teams move faster.
+    I’ve built multi-tenant CRMs, healthcare marketplaces, Arabic RTL storefronts, and client sites across Egypt and Europe.
+    Let’s connect and build something that feels intentional.`;
   const imgRef = useRef(null);
   useGSAP(() => {
     gsap.to("#about", {
