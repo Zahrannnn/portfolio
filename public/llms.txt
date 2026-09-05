@@ -1,0 +1,40 @@
+# Mohamed Zahran
+
+> Frontend engineer at RICOH Europe (formerly CORELIA), based in Cairo, Egypt. Builds production UIs with React, Next.js, and TypeScript: real-time dashboards, 3D web experiences (React Three Fiber), and agentic workflows.
+
+Portfolio: https://mzahran.tech
+GitHub: https://github.com/Zahrannnn
+LinkedIn: https://www.linkedin.com/in/mohamed-zahran-383859222/
+Email: info@mzahran.tech
+
+## Current role
+
+Front-End Developer at RICOH Europe (November 2025 - present). Delivers production frontends in parallel under the CORELIA program for cross-regional European operations:
+
+- 3D Building & Space Viewer: multi-mode 3D viewer (Dollhouse / Panorama / Split) with room-aware navigation, React 19 + React Three Fiber / Three.js
+- Tailgating Detection System: real-time anomaly dashboard with live MJPEG streaming and license-plate OCR workflows (React 18, Redux Toolkit, TanStack Query)
+- AGL Invoice Management: OCR-backed invoice verification UI over SharePoint and AS400 (React, TypeScript, TanStack Query)
+- Qalam Vision: Arabic/multilingual NLP keyword-extraction interface integrating Label Studio
+
+## Experience
+
+- Front-End Developer, RICOH Europe, Cairo - Nov 2025 to present
+- Front-End Developer, NedSwiss (remote, Switzerland) - Feb 2025 to Nov 2025. Built a multilingual admin/staff CRM dashboard (Next.js 15, TanStack Table/Query, Recharts) and the company marketing site (GSAP, Lenis, next-intl)
+- Frontend Lead, GDSC - Shorouk Academy - Aug 2023 to Jun 2025. Ran React/Next.js/TypeScript workshops for 50+ students
+
+## Selected projects
+
+- CORELIA 3D Building & Space Viewer (React Three Fiber, GSAP, Framer Motion)
+- Tailgating Detection System (React 18, TanStack Query, Shadcn UI)
+- Wasla CRM - multi-tenant SaaS CRM with real-time notifications (Next.js 15, SignalR, AI toxicity moderation under 100ms)
+- Medical System - Egyptian government healthcare insurance portal (Next.js 16, React 19), live at https://medical-system-gov.vercel.app
+- OZ Storefront - Arabic-first RTL e-commerce storefront for a school-uniform retailer (Next.js 16, Tailwind CSS v4)
+- AI-Powered Translation Platform - multilingual SaaS with Paymob billing (Next.js)
+
+## Skills
+
+TypeScript, JavaScript (ES6+), React 19, Next.js 15/16, Redux Toolkit, Zustand, TanStack Query/Table/Form, React Three Fiber / Three.js, GSAP, Framer Motion, Lenis, Tailwind CSS v4, Shadcn / Radix UI, RTL + next-intl i18n, WCAG accessibility, Vitest, Zod, Docker, GitLab CI, REST API integration, SSE streaming.
+
+## Education
+
+BSc in Computer Science, Shorouk Academy, Cairo - GPA 3.8/4.0

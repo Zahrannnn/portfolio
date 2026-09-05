@@ -1,48 +1,61 @@
-# Robots.txt for Mohamed Ossama Zahran Portfolio
+# Robots.txt for Mohamed Zahran Portfolio
 # https://mzahran.tech
 
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://mzahran.tech/sitemap.xml
-
-# Specific directives for major search engines
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-# Block admin/dashboard access
-User-agent: *
 Disallow: /dashboard
 Disallow: /admin
 Disallow: /.env
-Disallow: /node_modules/
 
-# Allow important portfolio sections
-User-agent: *
+Sitemap: https://mzahran.tech/sitemap.xml
+
+# Search engines
+User-agent: Googlebot
 Allow: /
-Allow: /#home
-Allow: /#about
-Allow: /#services
-Allow: /#work
-Allow: /#contact
 
-# Block development files
-User-agent: *
-Disallow: *.json$
-Disallow: *.log$
-Disallow: /src/
-Disallow: /.git/
-Disallow: /.vscode/
+User-agent: Bingbot
+Allow: /
 
-# Cache directive
-# Crawl-delay: 1 
+User-agent: DuckDuckBot
+Allow: /
+
+# AI search & assistant crawlers - explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Machine-readable profile for AI agents
+# https://mzahran.tech/llms.txt
+# https://mzahran.tech/agents.json
