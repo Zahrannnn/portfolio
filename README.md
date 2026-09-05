@@ -3,7 +3,7 @@
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Three.js](https://img.shields.io/badge/Three.js-R3F-000000?style=flat-square&logo=threedotjs&logoColor=white)](https://docs.pmnd.rs/react-three-fiber)
-[![Live](https://img.shields.io/badge/Live-mohamed--zahrann.vercel.app-111111?style=flat-square)](https://mohamed-zahrann.vercel.app)
+[![Live](https://img.shields.io/badge/Live-mohamed--zahrann.vercel.app-111111?style=flat-square)](https://mzahran.tech)
 
 Personal portfolio for **Mohamed Zahran**, frontend engineer at RICOH Europe (formerly Corelia). Product UIs, marketplace systems, and agentic workflows — React, TypeScript, GSAP, and a Three.js hero.
 
@@ -14,7 +14,7 @@ Personal portfolio for **Mohamed Zahran**, frontend engineer at RICOH Europe (fo
 A Vite + React single-page site with smooth scrolling (Lenis), scroll-driven motion (GSAP), and a 3D planet hero (React Three Fiber). Content covers selected projects, client work, tools, and contact.
 
 > [!NOTE]
-> Live site: [mohamed-zahrann.vercel.app](https://mohamed-zahrann.vercel.app)  
+> Live site: [mzahran.tech](https://mzahran.tech)  
 > Profile & socials: [github.com/Zahrannnn](https://github.com/Zahrannnn) · [LinkedIn](https://www.linkedin.com/in/mohamed-zahran-383859222/)
 
 ## Features

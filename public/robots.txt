@@ -1,11 +1,11 @@
 # Robots.txt for Mohamed Ossama Zahran Portfolio
-# https://mohamedossama.dev
+# https://mzahran.tech
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://mohamedossama.dev/sitemap.xml
+Sitemap: https://mzahran.tech/sitemap.xml
 
 # Specific directives for major search engines
 User-agent: Googlebot

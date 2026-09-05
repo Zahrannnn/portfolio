@@ -1,7 +1,7 @@
 // SEO Configuration for Mohamed Zahran Portfolio
 export const seoConfig = {
   siteName: "Mohamed Zahran Portfolio",
-  siteUrl: "https://mohamed-zahrann.vercel.app",
+  siteUrl: "https://mzahran.tech",
   author: "Mohamed Zahran",
 
   defaultTitle: "Mohamed Zahran - Frontend Engineer at RICOH Europe",
@@ -28,12 +28,12 @@ export const seoConfig = {
     twitter: "@zahranzone",
     github: "https://github.com/Zahrannnn",
     linkedin: "https://www.linkedin.com/in/mohamed-zahran-383859222/",
-    email: "mohamedzahrann0@gmail.com",
+    email: "info@mzahran.tech",
     phone: "+20 109 208 8922",
   },
 
   ogImage: {
-    url: "https://mohamed-zahrann.vercel.app/og-image.jpg",
+    url: "https://mzahran.tech/og-image.jpg",
     width: 1200,
     height: 630,
     alt: "Mohamed Zahran - Frontend Engineer Portfolio",
@@ -50,8 +50,8 @@ export const seoConfig = {
       jobTitle: "Frontend Engineer",
       description:
         "Frontend engineer at RICOH Europe building product UIs and agentic systems with React, Next.js, and TypeScript.",
-      url: "https://mohamed-zahrann.vercel.app",
-      image: "https://mohamed-zahrann.vercel.app/og-image.jpg",
+      url: "https://mzahran.tech",
+      image: "https://mzahran.tech/og-image.jpg",
       sameAs: [
         "https://github.com/Zahrannnn",
         "https://www.linkedin.com/in/mohamed-zahran-383859222/",
@@ -73,7 +73,7 @@ export const seoConfig = {
         "@type": "Organization",
         name: "RICOH Europe",
       },
-      email: "mohamedzahrann0@gmail.com",
+      email: "info@mzahran.tech",
       telephone: "+20 109 208 8922",
     },
 
@@ -83,7 +83,7 @@ export const seoConfig = {
       name: "Mohamed Zahran Portfolio",
       description:
         "Portfolio of Mohamed Zahran, frontend engineer at RICOH Europe.",
-      url: "https://mohamed-zahrann.vercel.app",
+      url: "https://mzahran.tech",
       author: {
         "@type": "Person",
         name: "Mohamed Zahran",
