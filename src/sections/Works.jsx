@@ -155,13 +155,13 @@ const Works = () => {
                 ))}
               </div>
               {project.image ? (
-                <div className="relative flex items-center justify-center px-10 md:hidden h-[200px]">
+                <div className="relative mx-6 mt-5 overflow-hidden rounded-xl border border-black/10 md:hidden">
                   <img
                     src={project.image}
                     alt=""
                     loading="lazy"
                     decoding="async"
-                    className="absolute bg-center px-14 rounded-xl"
+                    className="block h-auto max-h-[280px] w-full object-cover object-top"
                   />
                 </div>
               ) : null}
