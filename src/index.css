@@ -132,6 +132,12 @@ body {
   @apply text-[42px] sm:text-[52px] md:text-[62px] lg:text-[100px];
 }
 
+/* Outlined ghost type — stack section indices & backdrop word */
+@utility text-outline-ink {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(57 54 50 / 0.16);
+}
+
 /* Enhanced Works Section Styles */
 @utility works-project-card {
   transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
