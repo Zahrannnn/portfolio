@@ -188,12 +188,15 @@ const PdfWindow = ({ open, onClose, originRef, fileUrl = "/resume.pdf", title = 
     let cancelled = false;
     (async () => {
       try {
-        const [pdfjs, worker] = await Promise.all([
+        // Bundle the worker into the chunk graph (?worker) and hand pdf.js a
+        // live port — a `?url` reference 404s on production deploys when the
+        // emitted asset hash and the importing chunk drift apart.
+        const [pdfjs, { default: PdfWorker }] = await Promise.all([
           import("pdfjs-dist"),
-          import("pdfjs-dist/build/pdf.worker.min.mjs?url"),
+          import("pdfjs-dist/build/pdf.worker.min.mjs?worker"),
         ]);
         if (cancelled) return;
-        pdfjs.GlobalWorkerOptions.workerSrc = worker.default;
+        pdfjs.GlobalWorkerOptions.workerPort = new PdfWorker();
 
         // v6 note: destroy() lives on the loading task, not the doc proxy
         const loadingTask = pdfjs.getDocument({ url: fileUrl });
