@@ -1,9 +1,5 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, useGSAP } from "../lib/gsap";
 
 export const AnimatedTextLines = ({ text, className }) => {
   const containerRef = useRef(null);

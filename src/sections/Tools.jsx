@@ -1,13 +1,8 @@
 import { useRef } from "react";
 import { toolsData } from "../constants";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
-import { useGSAP } from "@gsap/react";
+import { gsap, ScrollTrigger, SplitText, useGSAP } from "../lib/gsap";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Tools = () => {
   const sectionRef = useRef(null);

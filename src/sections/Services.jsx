@@ -2,17 +2,15 @@ import { useRef } from "react";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import { servicesData } from "../constants";
 import { useMediaQuery } from "react-responsive";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap, useGSAP } from "../lib/gsap";
 
 const Services = () => {
   const text = `I build secure, high-performance full-stack apps
-    with smooth UX to drive growth 
+    with smooth UX to drive growth
     not headaches.`;
   const serviceRefs = useRef([]);
   const isDesktop = useMediaQuery({ minWidth: "48rem" }); //768px
-  
-  // Use data from constants directly
+
   const services = servicesData;
 
   useGSAP(() => {
@@ -28,10 +26,8 @@ const Services = () => {
         duration: 1,
         ease: "circ.out",
       });
-     
-     
     });
-  }, [services]); // Keep services as dependency for consistency
+  }, []);
 
   useGSAP(() => {
     gsap.set("#services", {

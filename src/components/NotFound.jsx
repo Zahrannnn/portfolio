@@ -1,10 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
-import { TextPlugin } from 'gsap/TextPlugin';
+import { gsap, useGSAP } from '../lib/gsap';
 import Magnet from './Animations/Magnet/Magnet';
-
-gsap.registerPlugin(TextPlugin);
 
 const NotFound = () => {
   const containerRef = useRef(null);
@@ -15,7 +12,7 @@ const NotFound = () => {
   const particlesRef = useRef([]);
   const decorativeElementsRef = useRef([]);
 
-  useEffect(() => {
+  useGSAP((context, contextSafe) => {
     const container = containerRef.current;
     const title = titleRef.current;
     const subtitle = subtitleRef.current;
@@ -154,7 +151,7 @@ const NotFound = () => {
     });
 
     // Mouse move parallax effect (subtle)
-    const handleMouseMove = (e) => {
+    const handleMouseMove = contextSafe((e) => {
       const { clientX, clientY } = e;
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
@@ -174,7 +171,7 @@ const NotFound = () => {
         duration: 2,
         ease: "power2.out",
       });
-    };
+    });
 
     window.addEventListener('mousemove', handleMouseMove);
 

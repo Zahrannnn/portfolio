@@ -1,11 +1,12 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Observer } from "gsap/Observer";
+import { SplitText } from "gsap/SplitText";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger, Observer);
+gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
 gsap.config({
   nullTargetWarn: false,
 });
 
-export { gsap, ScrollTrigger, Observer };
+export { gsap, ScrollTrigger, SplitText, useGSAP };

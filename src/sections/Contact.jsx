@@ -1,20 +1,11 @@
-import { useGSAP } from "@gsap/react";
+import { gsap, useGSAP } from "../lib/gsap";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
-import Marquee from "../components/Marquee";
 import { socials } from "../constants";
-import gsap from "gsap";
 import TextZoo from "../components/TextZoo";
 
 const Contact = () => {
-  const text = `Got a question, how or project Idea?
-    WE’D love to hear from you and discus further!`;
-  const items = [
-    "just imagine, I code",
-    "just imagine, I code",
-    "just imagine, I code",
-    "just imagine, I code",
-    "just imagine, I code",
-  ];
+  const text = `Got a question, an idea, or a project?
+    We’d love to hear from you and discuss further!`;
   useGSAP(() => {
     gsap.from(".social-link", {
       y: 100,
@@ -61,7 +52,7 @@ const Contact = () => {
               <h2>Social Media</h2>
               <div className="w-full h-px my-2 bg-white/30" />
               <div className="flex flex-wrap gap-2">
-                {socials.map((social, index) => (
+                {socials.map((social) => (
                   <div key={social.name} className="flex items-center gap-2">
                   <a
                     href={social.href}
@@ -79,7 +70,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      {/* <Marquee items={items} className="text-white bg-transparent" /> */}
     </section>
   );
 };

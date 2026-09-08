@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { socials } from "../constants";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap, useGSAP } from "../lib/gsap";
 import { Link } from "react-scroll";
 import TextZoo from "../components/TextZoo";
 
@@ -142,19 +141,16 @@ const Navbar = () => {
           <div className="font-light">
             <p className="tracking-wider text-white/50">Social Media</p>
             <div className="flex flex-col flex-wrap items-center md:flex-row gap-x-2">
-              {socials.map((social, index) => (
-                <>
+              {socials.map((social) => (
+                <Fragment key={social.name}>
                   <a
-                    key={index}
                     href={social.href}
                     className="text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
                   >
                     <TextZoo text={social.name} />
-
                   </a>
                   <div className="w-1 h-1 bg-white rounded-full mb-3"></div>
-
-                </>
+                </Fragment>
               ))}
             </div>
 

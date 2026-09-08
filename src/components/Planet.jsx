@@ -4,8 +4,7 @@
 */
 import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap, useGSAP } from "../lib/gsap";
 
 const PLANET_URL = "/models/Planet.glb";
 
