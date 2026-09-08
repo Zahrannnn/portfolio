@@ -2,6 +2,7 @@ import { gsap, useGSAP } from "../lib/gsap";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import { socials } from "../constants";
 import TextZoo from "../components/TextZoo";
+import ResumeCard from "../components/ResumeCard";
 
 const Contact = () => {
   const text = `Got a question, an idea, or a project?
@@ -18,11 +19,22 @@ const Contact = () => {
         trigger: ".social-link",
       },
     });
+
+    gsap.from(".resume-card", {
+      y: 60,
+      autoAlpha: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".resume-card",
+        start: "top 92%",
+      },
+    });
   }, []);
   return (
     <section
       id="contact"
-      className="flex flex-col justify-between min-h-screen bg-black"
+      className="flex flex-col justify-between min-h-screen rounded-t-4xl bg-black"
     >
       <div>
         <AnimatedHeaderSection
@@ -32,8 +44,8 @@ const Contact = () => {
           textColor={"text-white"}
           withScrollTrigger={true}
         />
-        <div className="flex px-10 font-light text-white uppercase lg:text-[32px] text-[26px] leading-none mb-10">
-          <div className="flex flex-col w-full gap-10">
+        <div className="grid gap-14 px-10 pb-6 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="flex w-full flex-col gap-10 font-light text-white uppercase lg:text-[32px] text-[26px] leading-none">
             <div className="social-link">
               <h2>E-mail</h2>
               <div className="w-full h-px my-2 bg-white/30" />
@@ -54,20 +66,20 @@ const Contact = () => {
               <div className="flex flex-wrap gap-2">
                 {socials.map((social) => (
                   <div key={social.name} className="flex items-center gap-2">
-                  <a
-                    href={social.href}
-                    className="text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
-                  >
-                    <TextZoo text={social.name} />
-
-                  </a>
-                  <div className="w-1 h-1 bg-white rounded-full mb-3 "></div>
+                    <a
+                      href={social.href}
+                      className="text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
+                    >
+                      <TextZoo text={social.name} />
+                    </a>
+                    <div className="w-1 h-1 bg-white rounded-full mb-3 "></div>
                   </div>
-
                 ))}
               </div>
             </div>
           </div>
+
+          <ResumeCard />
         </div>
       </div>
     </section>
