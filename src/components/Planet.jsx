@@ -7,12 +7,15 @@ import { useGLTF } from "@react-three/drei";
 import { gsap, useGSAP } from "../lib/gsap";
 
 const PLANET_URL = "/models/Planet.glb";
+// Pin the Draco decoder version — the default mismatches three 0.185's
+// DRACOLoader and spams "M_ID" parse errors.
+const DRACO_DECODER = "https://www.gstatic.com/draco/versioned/decoders/1.5.7/";
 
 export function Planet({ lowDetail = false, ...props }) {
   const shapeContainer = useRef(null);
   const spheresContainer = useRef(null);
   const ringContainer = useRef(null);
-  const { materials, nodes } = useGLTF(PLANET_URL);
+  const { materials, nodes } = useGLTF(PLANET_URL, DRACO_DECODER);
 
   const mainSeg = lowDetail ? 24 : 48;
   const moonSeg = lowDetail ? 12 : 24;
@@ -100,4 +103,4 @@ export function Planet({ lowDetail = false, ...props }) {
   );
 }
 
-useGLTF.preload(PLANET_URL);
+useGLTF.preload(PLANET_URL, DRACO_DECODER);
