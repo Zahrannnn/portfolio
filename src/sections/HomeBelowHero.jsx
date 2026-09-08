@@ -3,6 +3,7 @@ import Services from "./Services";
 import About from "./About";
 import Tools from "./Tools";
 import Works from "./Works";
+import QuoteBand from "./QuoteBand";
 import Contact from "./Contact";
 
 /**
@@ -17,6 +18,7 @@ export default function HomeBelowHero() {
       <About />
       <Tools />
       <Works />
+      <QuoteBand />
       <Contact />
     </>
   );
