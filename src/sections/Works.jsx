@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import { projects } from "../constants";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap, useGSAP } from "../lib/gsap";
 
 const Works = () => {
@@ -16,6 +16,22 @@ const Works = () => {
   const mouse = useRef({ x: 0, y: 0 });
   const moveX = useRef(null);
   const moveY = useRef(null);
+
+  // Scrolling without moving the mouse leaves a stale preview hanging — fade it out
+  useEffect(() => {
+    const hidePreview = () => {
+      if (previewRef.current) {
+        gsap.to(previewRef.current, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.3,
+          overwrite: "auto",
+        });
+      }
+    };
+    window.addEventListener("scroll", hidePreview, { passive: true });
+    return () => window.removeEventListener("scroll", hidePreview);
+  }, []);
 
   useGSAP(() => {
     moveX.current = gsap.quickTo(previewRef.current, "x", {
@@ -43,6 +59,7 @@ const Works = () => {
 
   const handleMouseEnter = (index) => {
     if (window.innerWidth < 768) return;
+    if (!projects[index]?.image) return; // nothing to preview
     setCurrentIndex(index);
 
     const el = overlayRefs.current[index];
@@ -100,12 +117,15 @@ const Works = () => {
   };
 
   return (
-    <section id="work" className="flex flex-col min-h-screen pb-20">
+    <section
+      id="work"
+      className="flex flex-col min-h-screen rounded-t-4xl bg-black pb-20"
+    >
       <AnimatedHeaderSection
         subTitle={"Crafting Digital Experiences That Matter"}
         title={"Works"}
         text={text}
-        textColor={"text-black"}
+        textColor={"text-white"}
         withScrollTrigger={true}
       />
       <div
@@ -127,10 +147,10 @@ const Works = () => {
                 ref={(el) => {
                   overlayRefs.current[index] = el;
                 }}
-                className="absolute inset-0 hidden md:block duration-200 bg-black -z-10 clip-path"
+                className="absolute inset-0 hidden md:block duration-200 bg-white -z-10 clip-path"
               />
 
-              <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
+              <div className="flex justify-between px-10 text-white transition-all duration-500 md:group-hover:px-12 md:group-hover:text-black">
                 <h2 className="lg:text-[32px] text-[26px] leading-none">
                   {project.name}
                 </h2>
@@ -142,19 +162,19 @@ const Works = () => {
                   />
                 ) : null}
               </div>
-              <div className="w-full h-0.5 bg-black/80" />
+              <div className="w-full h-0.5 bg-white/25" />
               <div className="flex flex-wrap overflow-hidden px-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12">
                 {project.frameworks?.map((framework) => (
                   <p
                     key={framework.id}
-                    className="text-black transition-colors duration-500 md:group-hover:text-white"
+                    className="text-white/60 transition-colors duration-500 md:group-hover:text-black"
                   >
                     {framework.name}
                   </p>
                 ))}
               </div>
               {project.image ? (
-                <div className="relative mx-6 mt-5 overflow-hidden rounded-xl border border-black/10 md:hidden">
+                <div className="relative mx-6 mt-5 overflow-hidden rounded-xl border border-white/15 md:hidden">
                   <img
                     src={project.image}
                     alt=""
@@ -194,10 +214,11 @@ const Works = () => {
             </div>
           );
         })}
-        {/* desktop Floating preview image */}
+        {/* desktop Floating preview image — fixed aspect so every preview is uniform */}
         <div
           ref={previewRef}
-          className="fixed -top-2/6 left-0 z-50 overflow-hidden  pointer-events-none w-[560px] md:block hidden opacity-0 rounded-xl"
+          id="work-preview"
+          className="fixed -top-2/6 left-0 z-50 hidden aspect-[16/10] w-[560px] pointer-events-none overflow-hidden rounded-xl opacity-0 ring-1 ring-white/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] md:block"
         >
           {currentIndex !== null && projects[currentIndex]?.image && (
             <img
@@ -205,7 +226,7 @@ const Works = () => {
               alt=""
               loading="lazy"
               decoding="async"
-              className="object-cover w-full h-full rounded-md"
+              className="object-cover w-full h-full"
             />
           )}
         </div>
