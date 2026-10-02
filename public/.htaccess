@@ -1,0 +1,30 @@
+# Agent discovery configuration (see docs/agent-readiness.md).
+# Served by Hostinger (LiteSpeed). If public_html already has an .htaccess
+# managed outside this repo, merge these directives into it instead.
+
+# --- RFC 8288 Link headers: point agents at machine-readable resources ---
+<IfModule mod_headers.c>
+  Header set Link '</.well-known/api-catalog>; rel="api-catalog", </.well-known/mcp/server-card.json>; rel="service-desc", </llms.txt>; rel="service-doc", </agents.json>; rel="describedby", </llms.txt>; rel="alternate"; type="text/markdown"'
+</IfModule>
+
+# --- RFC 9727: the API catalog must be served as application/linkset+json ---
+<Files "api-catalog">
+  ForceType application/linkset+json
+</Files>
+
+# --- ARD manifest: allow cross-origin reads by registry crawlers ---
+<Files "ai-catalog.json">
+  Header set Access-Control-Allow-Origin "*"
+</Files>
+
+# --- Markdown for Agents: Accept: text/markdown returns a markdown response ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteCond %{REQUEST_URI} ^/(|index\.html)$ [NC]
+  RewriteRule ^ llms.txt [T=text/markdown,E=MD_TOKENS:1,L]
+</IfModule>
+<IfModule mod_headers.c>
+  # Approximate token count of llms.txt (chars/4); update when llms.txt changes.
+  Header always set x-markdown-tokens "820" env=MD_TOKENS
+</IfModule>
