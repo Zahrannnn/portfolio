@@ -28,8 +28,9 @@ echo "== Content Signals in robots.txt =="
 check "Content-Signal directive" "Content-Signal:" "$(curl -sS "$BASE/robots.txt")"
 
 echo "== Well-known endpoints =="
-api_ct=$(curl -sSI "$BASE/.well-known/api-catalog" | tr -d '\r' | grep -i '^content-type:')
-check "api-catalog status"      "^HTTP/2 200\|HTTP/1.1 200" "$(curl -sSI -o /dev/null -w '%{http_code}' "$BASE/.well-known/api-catalog" >/dev/null; curl -sSI "$BASE/.well-known/api-catalog")"
+code=$(curl -sS -o /dev/null -w '%{http_code}' "$BASE/.well-known/api-catalog")
+check "api-catalog status" "200" "$code"
+api_ct=$(curl -sSI "$BASE/.well-known/api-catalog" | tr -d '\r' | tr '[:upper:]' '[:lower:]' | grep -i '^content-type:')
 check "api-catalog content-type" "application/linkset+json" "$api_ct"
 check "api-catalog linkset body" '"linkset"' "$(curl -sS "$BASE/.well-known/api-catalog")"
 
@@ -38,8 +39,8 @@ for path in .well-known/mcp/server-card.json .well-known/agent-skills/index.json
   check "$path returns 200" "200" "$code"
 done
 
-ard=$(curl -sSI "$BASE/.well-known/ai-catalog.json" | tr -d '\r')
-check "ai-catalog CORS" "access-control-allow-origin: \*" "$(echo "$ard" | grep -i 'access-control-allow-origin' || echo MISSING)"
+ard=$(curl -sSI "$BASE/.well-known/ai-catalog.json" | tr -d '\r' | tr '[:upper:]' '[:lower:]')
+check "ai-catalog CORS" "access-control-allow-origin: *" "$(echo "$ard" | grep 'access-control-allow-origin' || echo MISSING)"
 
 echo "== Markdown for Agents =="
 md=$(curl -sS -D - -o /dev/null -H "Accept: text/markdown" "$BASE/" | tr -d '\r')
@@ -48,10 +49,11 @@ html=$(curl -sS -D - -o /dev/null "$BASE/" | tr -d '\r' | grep -i '^content-type
 check "HTML stays default" "text/html" "$html"
 
 echo "== Skill digests match published artifacts =="
+# Hash the LIVE artifacts (local working copies may be CRLF on Windows).
 idx=$(curl -sS "$BASE/.well-known/agent-skills/index.json")
 for s in mzahran-profile mzahran-resume mzahran-projects; do
-  local_hash=$(sha256sum "public/.well-known/agent-skills/$s/SKILL.md" | cut -d' ' -f1)
-  check "$s digest" "sha256:$local_hash" "$idx"
+  live_hash=$(curl -sS "$BASE/.well-known/agent-skills/$s/SKILL.md" | sha256sum | cut -d' ' -f1)
+  check "$s digest" "sha256:$live_hash" "$idx"
 done
 
 echo
