@@ -38,3 +38,15 @@ TypeScript, JavaScript (ES6+), React 19, Next.js 15/16, Redux Toolkit, Zustand, 
 ## Education
 
 BSc in Computer Science, Shorouk Academy, Cairo - GPA 3.8/4.0
+
+## Machine-readable metadata
+
+- Structured profile: https://mzahran.tech/agents.json
+- Resume (PDF): https://mzahran.tech/resume.pdf
+- API catalog: https://mzahran.tech/.well-known/api-catalog
+- MCP server card (WebMCP tools): https://mzahran.tech/.well-known/mcp/server-card.json
+- Agent skills index: https://mzahran.tech/.well-known/agent-skills/index.json
+- ARD manifest: https://mzahran.tech/.well-known/ai-catalog.json
+- Agent authentication: https://mzahran.tech/auth.md (no authentication required)
+- This page is also served as Content-Type: text/markdown when requested with Accept: text/markdown.
+- Content usage preferences: ai-train=yes, search=yes, ai-input=yes (https://mzahran.tech/robots.txt)
