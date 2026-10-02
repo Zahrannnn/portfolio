@@ -60,4 +60,29 @@ export const toolsData = [
     icon: "/assets/tools/claude.webp",
     tagline: "an ai pair programmer for deep work",
   },
+  {
+    name: "Docker",
+    iconify: "logos:docker-icon",
+    tagline: "same container, every machine",
+  },
+  {
+    name: "Redux Toolkit",
+    iconify: "logos:redux",
+    tagline: "predictable state at scale",
+  },
+  {
+    name: "TanStack Query",
+    iconify: "simple-icons:tanstack",
+    tagline: "server state, cached and correct",
+  },
+  {
+    name: "Framer Motion",
+    iconify: "logos:framer",
+    tagline: "declarative motion for react",
+  },
+  {
+    name: "Vite",
+    iconify: "logos:vitejs",
+    tagline: "the bundler building this page",
+  },
 ];
