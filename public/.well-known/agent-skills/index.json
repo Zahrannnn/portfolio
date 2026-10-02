@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "mzahran-profile",
+      "type": "skill-md",
+      "description": "Answer questions about Mohamed Zahran (role, employer, experience, skills, education, contact) from his machine-readable profile.",
+      "url": "https://mzahran.tech/.well-known/agent-skills/mzahran-profile/SKILL.md",
+      "digest": "sha256:594c9eb5dd511c37ff0e8839b608c06fc047639dd6ca1a511ec84b44527a395f"
+    },
+    {
+      "name": "mzahran-resume",
+      "type": "skill-md",
+      "description": "Retrieve and summarize Mohamed Zahran's resume PDF, or produce a structured summary of his CV content.",
+      "url": "https://mzahran.tech/.well-known/agent-skills/mzahran-resume/SKILL.md",
+      "digest": "sha256:a339db5e02670692458d0d31f28a91e1669a2ca045bebe394d0e0127db721889"
+    },
+    {
+      "name": "mzahran-projects",
+      "type": "skill-md",
+      "description": "List, filter, and describe Mohamed Zahran's portfolio projects with tech stacks and live links.",
+      "url": "https://mzahran.tech/.well-known/agent-skills/mzahran-projects/SKILL.md",
+      "digest": "sha256:2029492b701aa6a53386f4d73a12f277f7c23bec05756566b8b75eaf4d593a74"
+    }
+  ]
+}
