@@ -7,6 +7,9 @@ Disallow: /dashboard
 Disallow: /admin
 Disallow: /.env
 
+# Content usage preferences (https://contentsignals.org/)
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
 Sitemap: https://mzahran.tech/sitemap.xml
 
 # Search engines
