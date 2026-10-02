@@ -1,0 +1,29 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://mzahran.tech/",
+      "item": [
+        {
+          "rel": "service-desc",
+          "href": "https://mzahran.tech/.well-known/mcp/server-card.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "service-doc",
+          "href": "https://mzahran.tech/llms.txt",
+          "type": "text/plain"
+        },
+        {
+          "rel": "describedby",
+          "href": "https://mzahran.tech/agents.json",
+          "type": "application/json"
+        },
+        {
+          "rel": "status",
+          "href": "https://mzahran.tech/",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}
