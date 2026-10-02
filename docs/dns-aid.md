@@ -17,10 +17,13 @@ Notes:
 
 - In hPanel, enter the name without the domain suffix: `_index._agents` and
   `_a2a._agents`. TTL 3600 is fine.
-- If Hostinger's DNS editor rejects SVCB/HTTPS record types (support varies),
-  publish the zone on a DNS provider that supports them (Cloudflare, deSEC,
-  BIND, PowerDNS) and point mzahran.tech's nameservers there. Cloudflare's
-  dashboard supports HTTPS/SVCB records on any plan.
+- **Hostinger's DNS editor does not support these record types.** As of
+  October 2026 it only offers A, MX, AAAA, CNAME, SRV, and TXT — no SVCB or
+  HTTPS records. To publish DNS-AID, move DNS to a provider that supports
+  them (Cloudflare supports HTTPS/SVCB records on the free plan, as do deSEC,
+  PowerDNS, and BIND) and point mzahran.tech's nameservers there. Keep the
+  existing A/CNAME/MX records replicated at the new provider before
+  switching.
 - The `_a2a` record advertises an A2A agent endpoint. The portfolio does not
   currently run an A2A server — only add that record once one exists, or
   point `alpn` at the capability you actually operate. The `_index` record
