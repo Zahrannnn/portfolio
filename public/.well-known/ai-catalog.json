@@ -1,0 +1,70 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Mohamed Zahran Portfolio",
+    "identifier": "did:web:mzahran.tech"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:mzahran.tech:profile:mohamed-zahran",
+      "displayName": "Mohamed Zahran - Machine-Readable Profile",
+      "description": "Structured JSON profile: role, employer, experience, skills, education, and contact details.",
+      "type": "application/json",
+      "url": "https://mzahran.tech/agents.json",
+      "representativeQueries": [
+        "who is Mohamed Zahran and what does he work on",
+        "what are Mohamed Zahran's frontend skills",
+        "where does Mohamed Zahran work",
+        "how can I contact Mohamed Zahran"
+      ]
+    },
+    {
+      "identifier": "urn:air:mzahran.tech:docs:site-summary",
+      "displayName": "Site Summary for LLMs (llms.txt)",
+      "description": "Markdown summary of the portfolio: current role, experience, selected projects, skills, and education.",
+      "type": "text/plain",
+      "url": "https://mzahran.tech/llms.txt",
+      "representativeQueries": [
+        "summarize Mohamed Zahran's experience",
+        "list Mohamed Zahran's selected projects",
+        "what is Mohamed Zahran's education background"
+      ]
+    },
+    {
+      "identifier": "urn:air:mzahran.tech:docs:resume",
+      "displayName": "Mohamed Zahran - Resume (PDF)",
+      "description": "Resume PDF covering experience, projects, skills, and education.",
+      "type": "application/pdf",
+      "url": "https://mzahran.tech/resume.pdf",
+      "representativeQueries": [
+        "get Mohamed Zahran's resume",
+        "download Mohamed Zahran's CV as PDF",
+        "show Mohamed Zahran's work history"
+      ]
+    },
+    {
+      "identifier": "urn:air:mzahran.tech:server:portfolio-tools",
+      "displayName": "Portfolio Agent Tools (WebMCP)",
+      "description": "In-browser WebMCP tools exposing profile, experience, projects, resume, and contact data. Server card describes the tools.",
+      "type": "application/mcp-server-card+json",
+      "url": "https://mzahran.tech/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "what tools does the portfolio expose to agents",
+        "get Mohamed Zahran's profile via agent tools",
+        "list Mohamed Zahran's projects via agent tools"
+      ]
+    },
+    {
+      "identifier": "urn:air:mzahran.tech:discovery:api-catalog",
+      "displayName": "API Catalog (RFC 9727)",
+      "description": "Linkset catalog pointing agents to the service description, documentation, profile, and status resources.",
+      "type": "application/linkset+json",
+      "url": "https://mzahran.tech/.well-known/api-catalog",
+      "representativeQueries": [
+        "find the API catalog for mzahran.tech",
+        "where is the service documentation for this site",
+        "what machine-readable resources does mzahran.tech expose"
+      ]
+    }
+  ]
+}
