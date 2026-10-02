@@ -59,8 +59,7 @@ const Works = () => {
 
   const handleMouseEnter = (index) => {
     if (window.innerWidth < 768) return;
-    if (!projects[index]?.image) return; // nothing to preview
-    setCurrentIndex(index);
+    setCurrentIndex(index); // preview render only shows entries with an image
 
     const el = overlayRefs.current[index];
     if (!el) return;
@@ -78,12 +77,15 @@ const Works = () => {
       }
     );
 
-    gsap.to(previewRef.current, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.3,
-      ease: "power2.out",
-    });
+    // Projects without a preview image get the white sweep only
+    if (projects[index]?.image) {
+      gsap.to(previewRef.current, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
   };
 
   const handleMouseLeave = (index) => {
