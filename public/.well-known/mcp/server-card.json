@@ -1,0 +1,41 @@
+{
+  "serverInfo": {
+    "name": "mzahran-portfolio",
+    "title": "Mohamed Zahran - Portfolio",
+    "version": "1.0.0"
+  },
+  "description": "Portfolio of Mohamed Zahran, frontend engineer at RICOH Europe. Exposes profile, experience, projects, resume, and contact data to AI agents.",
+  "transport": {
+    "type": "webmcp",
+    "endpoint": "https://mzahran.tech/",
+    "description": "Tools run in the browser via the WebMCP API (document.modelContext.registerTool). No network MCP endpoint is exposed; open the site in a WebMCP-capable browser to invoke the tools."
+  },
+  "capabilities": {
+    "tools": {}
+  },
+  "tools": [
+    {
+      "name": "get-profile",
+      "description": "Get Mohamed Zahran's professional profile: role, employer, location, summary, skills, and contact details."
+    },
+    {
+      "name": "get-experience",
+      "description": "Get Mohamed Zahran's work experience history with highlights per role."
+    },
+    {
+      "name": "list-projects",
+      "description": "List portfolio projects with descriptions, tech stacks, and links. Optionally filter by a keyword."
+    },
+    {
+      "name": "get-resume",
+      "description": "Get the URL of Mohamed Zahran's resume PDF."
+    },
+    {
+      "name": "get-contact",
+      "description": "Get contact details: email, phone, GitHub, LinkedIn, Instagram."
+    }
+  ],
+  "contact": {
+    "email": "info@mzahran.tech"
+  }
+}
