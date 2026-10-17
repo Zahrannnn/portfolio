@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import { EASE, prefersReducedMotion } from '../lib/motion';
 
 interface TextZooProps {
     text: string;
@@ -17,13 +18,13 @@ const TextZoo = ({ text, className = "", href = "#" }: TextZooProps) => {
         const topText = topTextRef.current;
         const bottomText = bottomTextRef.current;
 
-        if (!container || !topText || !bottomText) return;
+        if (!container || !topText || !bottomText || prefersReducedMotion()) return;
 
         gsap.set(bottomText, { y: '100%' });
 
         const tl = gsap.timeline({ paused: true });
-        tl.to(topText, { y: '-100%', duration: 0.4  , ease: 'power2.inOut' }, 0)
-          .to(bottomText, { y: '0%', duration: 0.4, ease: 'power2.inOut' }, 0);
+        tl.to(topText, { y: '-100%', duration: 0.4, ease: EASE.hover }, 0)
+          .to(bottomText, { y: '0%', duration: 0.4, ease: EASE.hover }, 0);
 
         const onEnter = () => tl.play();
         const onLeave = () => tl.reverse();

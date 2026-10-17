@@ -6,6 +6,7 @@
 
 import { useEffect, useRef, ReactNode, HTMLAttributes } from "react";
 import { gsap } from "../../../lib/gsap";
+import { EASE } from "../../../lib/motion";
 
 interface MagnetProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -34,7 +35,7 @@ const Magnet: React.FC<MagnetProps> = ({
     if (!el || !inner) return;
 
     if (disabled) {
-      gsap.to(inner, { x: 0, y: 0, duration: 0.5, ease: "power2.out" });
+      gsap.to(inner, { x: 0, y: 0, duration: 0.5, ease: EASE.enter });
       return;
     }
 
@@ -44,8 +45,8 @@ const Magnet: React.FC<MagnetProps> = ({
       rect = null;
     };
 
-    const xTo = gsap.quickTo(inner, "x", { duration: 0.4, ease: "power3.out" });
-    const yTo = gsap.quickTo(inner, "y", { duration: 0.4, ease: "power3.out" });
+    const xTo = gsap.quickTo(inner, "x", { duration: 0.4, ease: EASE.enter });
+    const yTo = gsap.quickTo(inner, "y", { duration: 0.4, ease: EASE.enter });
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!rect) rect = el.getBoundingClientRect();

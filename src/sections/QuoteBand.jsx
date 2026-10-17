@@ -2,10 +2,13 @@ import { useRef } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { testimonials } from "../constants";
 import { gsap, useGSAP } from "../lib/gsap";
+import { useVelocitySkew } from "../lib/motion";
 import TextZoo from "../components/TextZoo";
 
 const QuoteBand = () => {
   const sectionRef = useRef(null);
+  const wallRef = useRef(null);
+  useVelocitySkew(wallRef, { max: 2, factor: 0.035 });
 
   useGSAP(
     () => {
@@ -84,7 +87,7 @@ const QuoteBand = () => {
       </div>
 
       {/* Quote wall */}
-      <div className="relative">
+      <div className="relative" ref={wallRef}>
         {testimonials.map((t, i) => (
           <figure
             key={t.id}

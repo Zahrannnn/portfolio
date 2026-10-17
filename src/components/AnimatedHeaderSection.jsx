@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { AnimatedTextLines } from "../components/AnimatedTextLines";
 import { gsap, useGSAP } from "../lib/gsap";
+import { EASE, prefersReducedMotion } from "../lib/motion";
 
 const AnimatedHeaderSection = ({
   subTitle,
@@ -10,16 +11,20 @@ const AnimatedHeaderSection = ({
   withScrollTrigger = false,
   // Above-the-fold usage (Hero): the title is the LCP element, so it must paint
   // in the first committed frame — entrance slides a short visible distance and
-  // never hides the text with opacity. Below-fold sections keep the old entrance.
+  // never hides the text. Below-fold sections get the house masked wipe.
   paintImmediately = false,
 }) => {
   const contextRef = useRef(null);
   const headerRef = useRef(null);
+  const clipRef = useRef(null);
 
   const shouldSplitTitle = title.includes(" ");
   const titleParts = shouldSplitTitle ? title.split(" ") : [title];
 
   useGSAP(() => {
+    // Reduced motion: everything stays visible, no entrance.
+    if (prefersReducedMotion()) return;
+
     const tl = gsap.timeline({
       scrollTrigger: withScrollTrigger
         ? {
@@ -28,27 +33,31 @@ const AnimatedHeaderSection = ({
         : undefined,
     });
     tl.from(contextRef.current, {
-      y: paintImmediately ? "10vh" : "50vh",
-      duration: 1,
-      ease: "circ.out",
+      y: paintImmediately ? "10vh" : "12vh",
+      duration: 1.1,
+      ease: EASE.enter,
     });
     if (!paintImmediately) {
+      // House reveal: the header block wipes up from a collapsed bottom edge.
+      // The text is clipped, not hidden — no opacity games, DOM stays intact.
       tl.from(
-        headerRef.current,
+        clipRef.current,
         {
-          opacity: 0,
-          y: "200",
-          duration: 1,
-          ease: "circ.out",
+          clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+          duration: 1.2,
+          ease: EASE.enter,
         },
-        "<+0.2"
+        0.1
       );
     }
   }, []);
 
   return (
     <div ref={contextRef}>
-      <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+      <div
+        ref={clipRef}
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+      >
         <div
           ref={headerRef}
           className="flex flex-col justify-center gap-12 pt-16 sm:gap-16"

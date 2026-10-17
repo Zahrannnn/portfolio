@@ -2,20 +2,40 @@
   Low-poly hero planet: keep materials/textures from the GLB,
   but render with cheap Sphere/Torus geometry instead of ~500k verts.
 */
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { gsap, useGSAP } from "../lib/gsap";
+import { EASE } from "../lib/motion";
 
 const PLANET_URL = "/models/Planet.glb";
 // Pin the Draco decoder version — the default mismatches three 0.185's
 // DRACOLoader and spams "M_ID" parse errors.
 const DRACO_DECODER = "https://www.gstatic.com/draco/versioned/decoders/1.5.7/";
 
+// rad per scrolled px + rad per second of idle drift
+const SCROLL_SPIN = 0.0012;
+const IDLE_SPIN = 0.08;
+
 export function Planet({ lowDetail = false, ...props }) {
   const shapeContainer = useRef(null);
   const spheresContainer = useRef(null);
   const ringContainer = useRef(null);
   const { materials, nodes } = useGLTF(PLANET_URL, DRACO_DECODER);
+  const reducedMotion = useMemo(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    []
+  );
+
+  // Scroll reflex: the planet spins as you scroll (plus a slow idle drift),
+  // so the hero keeps answering input while it's on screen.
+  useFrame((state) => {
+    if (reducedMotion || !shapeContainer.current) return;
+    shapeContainer.current.rotation.y =
+      window.scrollY * SCROLL_SPIN + state.clock.elapsedTime * IDLE_SPIN;
+  });
 
   const mainSeg = lowDetail ? 24 : 48;
   const moonSeg = lowDetail ? 12 : 24;
@@ -42,7 +62,7 @@ export function Planet({ lowDetail = false, ...props }) {
       tl.from(shapeContainer.current.position, {
         y: 5,
         duration: 2.4,
-        ease: "power3.out",
+        ease: EASE.enter,
       });
       tl.from(
         spheresContainer.current.rotation,

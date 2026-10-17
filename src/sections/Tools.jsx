@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { toolsData } from "../constants";
 import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap";
+import { EASE } from "../lib/motion";
 // SplitText is only needed by this (lazy, below-the-fold) section — importing it
 // here instead of lib/gsap.js keeps its bytes out of the eager gsap chunk.
 import { SplitText } from "gsap/SplitText";
@@ -119,7 +120,7 @@ const Tools = () => {
                       yPercent: 120,
                       duration: 0.55,
                       stagger: 0.035,
-                      ease: "power3.out",
+                      ease: EASE.enter,
                       scrollTrigger: {
                         containerAnimation: scrollTween,
                         trigger: panel,
@@ -137,7 +138,7 @@ const Tools = () => {
                   autoAlpha: 0,
                   y: 24,
                   duration: 0.6,
-                  ease: "power2.out",
+                  ease: EASE.enter,
                   scrollTrigger: {
                     containerAnimation: scrollTween,
                     trigger: panel,
@@ -155,7 +156,7 @@ const Tools = () => {
                   scale: 0.6,
                   rotation: -30,
                   duration: 0.8,
-                  ease: "back.out(1.6)",
+                  ease: EASE.accent,
                   scrollTrigger: {
                     containerAnimation: scrollTween,
                     trigger: panel,
@@ -168,8 +169,8 @@ const Tools = () => {
               // Magnetic badge — anchor stays stable, GSAP moves the inner badge
               const anchor = panel.querySelector(".tool-badge-anchor");
               if (badge && anchor) {
-                const xTo = gsap.quickTo(badge, "x", { duration: 0.5, ease: "power3" });
-                const yTo = gsap.quickTo(badge, "y", { duration: 0.5, ease: "power3" });
+                const xTo = gsap.quickTo(badge, "x", { duration: 0.5, ease: EASE.enter });
+                const yTo = gsap.quickTo(badge, "y", { duration: 0.5, ease: EASE.enter });
 
                 const onMove = contextSafe((e) => {
                   const rect = anchor.getBoundingClientRect();
@@ -179,12 +180,12 @@ const Tools = () => {
                   yTo(relY * 0.35);
                 });
                 const onEnter = contextSafe(() => {
-                  gsap.to(badge, { scale: 1.06, duration: 0.3, ease: "power2.out" });
+                  gsap.to(badge, { scale: 1.06, duration: 0.3, ease: EASE.enter });
                 });
                 const onLeave = contextSafe(() => {
                   xTo(0);
                   yTo(0);
-                  gsap.to(badge, { scale: 1, duration: 0.4, ease: "power2.out" });
+                  gsap.to(badge, { scale: 1, duration: 0.4, ease: EASE.enter });
                 });
 
                 panel.addEventListener("mousemove", onMove);
@@ -211,7 +212,7 @@ const Tools = () => {
                   autoAlpha: 1,
                   duration: 0.7,
                   stagger: 0.08,
-                  ease: "power3.out",
+                  ease: EASE.enter,
                   overwrite: true,
                 }),
             });

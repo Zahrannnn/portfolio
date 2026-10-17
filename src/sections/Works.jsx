@@ -3,6 +3,7 @@ import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import { projects } from "../constants";
 import { useEffect, useRef, useState } from "react";
 import { gsap, useGSAP } from "../lib/gsap";
+import { EASE, useVelocitySkew } from "../lib/motion";
 
 // Intrinsic dimensions of each project image — lets the browser reserve the
 // correct box for the lazy-loaded mobile cards instead of collapsing to 0
@@ -22,6 +23,8 @@ const IMAGE_DIMS = {
 const Works = () => {
   const overlayRefs = useRef([]);
   const previewRef = useRef(null);
+  const workListRef = useRef(null);
+  useVelocitySkew(workListRef, { max: 2.5, factor: 0.04 });
 
   const [currentIndex, setCurrentIndex] = useState(null);
   const text = `A collection of carefully crafted projects
@@ -51,11 +54,11 @@ const Works = () => {
   useGSAP(() => {
     moveX.current = gsap.quickTo(previewRef.current, "x", {
       duration: 1.5,
-      ease: "power3.out",
+      ease: EASE.enter,
     });
     moveY.current = gsap.quickTo(previewRef.current, "y", {
       duration: 2,
-      ease: "power3.out",
+      ease: EASE.enter,
     });
 
     gsap.from(".work-project", {
@@ -64,7 +67,7 @@ const Works = () => {
       delay: 0.5,
       duration: 1,
       stagger: 0.3,
-      ease: "back.out",
+      ease: EASE.enter,
       scrollTrigger: {
         trigger: "#work-list",
         start: "top 85%",
@@ -88,7 +91,7 @@ const Works = () => {
       {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
         duration: 0.15,
-        ease: "power2.out",
+        ease: EASE.enter,
       }
     );
 
@@ -147,6 +150,7 @@ const Works = () => {
       />
       <div
         id="work-list"
+        ref={workListRef}
         className="relative flex flex-col font-light"
         onMouseMove={handleMouseMove}
       >

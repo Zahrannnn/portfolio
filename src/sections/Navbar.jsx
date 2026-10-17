@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { socials } from "../constants";
 import { gsap, useGSAP } from "../lib/gsap";
+import { EASE } from "../lib/motion";
 import { useLenis } from "lenis/react";
 import TextZoo from "../components/TextZoo";
 
@@ -27,7 +28,7 @@ const Navbar = () => {
       .to(navRef.current, {
         xPercent: 0,
         duration: 1,
-        ease: "power3.out",
+        ease: EASE.enter,
       })
       .to(
         linksRef.current,
@@ -36,7 +37,7 @@ const Navbar = () => {
           x: 0,
           stagger: 0.1,
           duration: 0.5,
-          ease: "power2.out",
+          ease: EASE.enter,
         },
         "<"
       )
@@ -46,7 +47,7 @@ const Navbar = () => {
           autoAlpha: 1,
           x: 0,
           duration: 0.5,
-          ease: "power2.out",
+          ease: EASE.enter,
         },
         "<+0.2"
       );
@@ -57,7 +58,7 @@ const Navbar = () => {
         rotate: 45,
         y: 3.3,
         duration: 0.3,
-        ease: "power2.inOut",
+        ease: EASE.hover,
       })
       .to(
         bottomLineRef.current,
@@ -65,7 +66,7 @@ const Navbar = () => {
           rotate: -45,
           y: -3.3,
           duration: 0.3,
-          ease: "power2.inOut",
+          ease: EASE.hover,
         },
         "<"
       );

@@ -103,6 +103,10 @@
   --font-amiamie: "Amiamie", sans-serif;
   --font-amiamie-round: "Amiamie-Round", sans-serif;
 
+  /* Motion vocabulary (mirrors EASE in src/lib/motion.js) */
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1); /* expo.out */
+  --ease-hover: cubic-bezier(0.455, 0.03, 0.515, 0.955); /* power2.inOut */
+
   --animate-marquee: marquee 40s infinite linear;
   @keyframes marquee {
     from {
@@ -149,7 +153,7 @@ body {
 
 /* Enhanced Works Section Styles */
 @utility works-project-card {
-  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.5s var(--ease-enter);
 }
 
 @utility works-number-circle {
@@ -171,7 +175,7 @@ body {
 
 /* Smooth hover transitions */
 .works-project-item {
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.3s var(--ease-enter);
 }
 
 .works-project-item:hover {
