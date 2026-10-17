@@ -96,6 +96,23 @@ export const projects = [
     ],
   },
   {
+    id: 21,
+    name: "MAC-Egypt — UNIDO/NOU/EED M&E Platform",
+    description:
+      "Production monitoring & evaluation platform for a UNIDO / NOU / EED Egypt programme, digitizing the full lifecycle of the mobile air-conditioning servicing sector: workshop identification, surveys, validation and selection, training, equipment handover, and reports. Arabic-first RTL / English Next.js 16 + React 19 client over an ASP.NET Core 8 API, with 409 passing frontend tests.",
+    href: "https://rac-egypt.mzahran.tech",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Next.js 16" },
+      { id: 2, name: "React 19" },
+      { id: 3, name: "TypeScript" },
+      { id: 4, name: "Tailwind CSS v4" },
+      { id: 5, name: "shadcn/ui" },
+      { id: 6, name: "ASP.NET Core 8" },
+      { id: 7, name: "Arabic RTL" },
+    ],
+  },
+  {
     id: 7,
     name: "OZ Storefront",
     description:

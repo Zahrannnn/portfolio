@@ -26,6 +26,7 @@ Front-End Developer at RICOH Europe (November 2025 - present). Delivers producti
 
 - CORELIA 3D Building & Space Viewer (React Three Fiber, GSAP, Framer Motion)
 - Tailgating Detection System (React 18, TanStack Query, Shadcn UI)
+- MAC-Egypt - UNIDO/NOU/EED monitoring & evaluation platform for Egypt's mobile air-conditioning servicing sector, Arabic-first RTL, live at https://rac-egypt.mzahran.tech
 - Wasla CRM - multi-tenant SaaS CRM with real-time notifications (Next.js 15, SignalR, AI toxicity moderation under 100ms)
 - Medical System - Egyptian government healthcare insurance portal (Next.js 16, React 19), live at https://medical-system-gov.vercel.app
 - OZ Storefront - Arabic-first RTL e-commerce storefront for a school-uniform retailer (Next.js 16, Tailwind CSS v4)
