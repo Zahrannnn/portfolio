@@ -300,8 +300,15 @@ const PdfWindow = ({ open, onClose, originRef, fileUrl = "/resume.pdf", title = 
           </a>
         </div>
 
-        {/* Content */}
-        <div className="flex-1 overflow-y-auto overscroll-contain bg-[#454749] p-6">
+        {/* Content — data-lenis-prevent: while the modal is open lenis.stop()
+            preventDefaults every wheel/touch on the window to lock the page,
+            which would also kill this container's native scroll. The attribute
+            makes Lenis ignore events originating here, so wheel and touch
+            scroll the PDF again; the page behind stays locked. */}
+        <div
+          data-lenis-prevent
+          className="flex-1 overflow-y-auto overscroll-contain bg-[#454749] p-6"
+        >
           {loadState === "loading" && (
             <div className="flex h-full min-h-[320px] items-center justify-center gap-3 text-white/60">
               <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/20 border-t-white/80" />
