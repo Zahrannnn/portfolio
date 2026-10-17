@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLenis } from "lenis/react";
-import { gsap } from "./gsap";
+import { gsap, ScrollTrigger } from "./gsap";
 
 /*
   The site's motion vocabulary — named once, referenced everywhere.
@@ -16,6 +16,37 @@ export const EASE = {
 export const prefersReducedMotion = () =>
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/*
+  Deck handoff: as a rounded sheet scrolls over a section, the covered section
+  recedes — scales back toward its top edge and dims, like a card sinking
+  under the next one. Scroll-locked (scrub) and fully reversible; transform +
+  opacity only. Only safe on sections without pinned descendants or
+  position:fixed children (transformed ancestors break both).
+*/
+export function createSectionRecede(
+  coveredSelector,
+  coveringSelector,
+  { scale = 0.96, dim = 0.45, end = "top 15%" } = {}
+) {
+  if (prefersReducedMotion()) return;
+  return gsap.fromTo(
+    coveredSelector,
+    { scale: 1, autoAlpha: 1 },
+    {
+      scale,
+      autoAlpha: dim,
+      transformOrigin: "50% 0%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: coveringSelector,
+        start: "top bottom",
+        end,
+        scrub: true,
+      },
+    }
+  );
+}
 
 /*
   Scroll-velocity reflex: shear an element by Lenis velocity (clamped) and
