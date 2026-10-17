@@ -1,14 +1,15 @@
 import { Suspense, lazy, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useLenis } from "lenis/react";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import Magnet from "../components/Animations/Magnet/Magnet";
-import { Link } from "react-scroll";
 import ModelSpinner from "../components/ModelSpinner";
 
 const HeroCanvas = lazy(() => import("./HeroCanvas"));
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
+  const lenis = useLenis();
   const [modelReady, setModelReady] = useState(false);
   const text = `Frontend engineer at RICOH Europe.
    Product UIs, marketplace systems,
@@ -23,18 +24,20 @@ const Hero = () => {
             title={"ZAHRAN"}
             text={text}
             textColor={"text-black"}
+            paintImmediately
           />
           <div className="self-end p-10 -mt-15">
             <Magnet padding={100} disabled={false} magnetStrength={5}>
-              <Link
-                to="work"
-                spy={true}
-                smooth={true}
-                offset={-100}
+              <a
+                href="#work"
+                onClick={(e) => {
+                  e.preventDefault();
+                  lenis?.scrollTo("#work", { offset: -100 });
+                }}
                 className="inline-block px-8 py-3 bg-black text-white rounded-full text-lg font-semibold transition-transform hover:scale-105"
               >
                 View My Work
-              </Link>
+              </a>
             </Magnet>
           </div>
         </div>

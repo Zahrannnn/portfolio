@@ -28,3 +28,18 @@
   # Approximate token count of llms.txt (chars/4); update when llms.txt changes.
   Header always set x-markdown-tokens "820" env=MD_TOKENS
 </IfModule>
+
+# --- Caching: static assets are content-addressed by convention (never edit in
+# place, bump the path instead); HTML must always revalidate. ---
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2?|ttf|otf|glb|webp|jpe?g|png|svg|ico|pdf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Vite emits hashed bundles: name-hash.ext with an 8-char hash segment.
+  <FilesMatch "\.[A-Za-z0-9_-]{8}\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

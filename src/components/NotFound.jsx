@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap, useGSAP } from '../lib/gsap';
 import Magnet from './Animations/Magnet/Magnet';
@@ -11,6 +11,18 @@ const NotFound = () => {
   const buttonRef = useRef(null);
   const particlesRef = useRef([]);
   const decorativeElementsRef = useRef([]);
+
+  // "Rowdies" is only used on the 404 page — load its stylesheet here instead of
+  // index.html so the home route never pays for a third-party font it never renders.
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap';
+    document.head.appendChild(link);
+    return () => {
+      link.remove();
+    };
+  }, []);
 
   useGSAP((context, contextSafe) => {
     const container = containerRef.current;

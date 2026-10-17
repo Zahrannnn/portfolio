@@ -31,9 +31,21 @@ function LoadBridge({ onLoadComplete }) {
 
 export default function HeroCanvas({ isMobile, onLoadComplete }) {
   const [dpr, setDpr] = useState(isMobile ? 1 : 1.5);
+  // Pause the render loop entirely once the hero is scrolled away — otherwise
+  // the planet keeps burning GPU/main-thread frames under Services/Tools/Works.
+  const [heroVisible, setHeroVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setHeroVisible(window.scrollY <= window.innerHeight);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const canvasProps = useMemo(
     () => ({
       dpr,
+      frameloop: heroVisible ? "always" : "never",
       shadows: !isMobile,
       camera: { position: [0, 0, -10], fov: 17.5, near: 1, far: 20 },
       gl: {
@@ -43,7 +55,7 @@ export default function HeroCanvas({ isMobile, onLoadComplete }) {
       },
       performance: { min: 0.5 },
     }),
-    [dpr, isMobile]
+    [dpr, isMobile, heroVisible]
   );
 
   return (

@@ -8,6 +8,10 @@ const AnimatedHeaderSection = ({
   text,
   textColor,
   withScrollTrigger = false,
+  // Above-the-fold usage (Hero): the title is the LCP element, so it must paint
+  // in the first committed frame — entrance slides a short visible distance and
+  // never hides the text with opacity. Below-fold sections keep the old entrance.
+  paintImmediately = false,
 }) => {
   const contextRef = useRef(null);
   const headerRef = useRef(null);
@@ -24,20 +28,22 @@ const AnimatedHeaderSection = ({
         : undefined,
     });
     tl.from(contextRef.current, {
-      y: "50vh",
+      y: paintImmediately ? "10vh" : "50vh",
       duration: 1,
       ease: "circ.out",
     });
-    tl.from(
-      headerRef.current,
-      {
-        opacity: 0,
-        y: "200",
-        duration: 1,
-        ease: "circ.out",
-      },
-      "<+0.2"
-    );
+    if (!paintImmediately) {
+      tl.from(
+        headerRef.current,
+        {
+          opacity: 0,
+          y: "200",
+          duration: 1,
+          ease: "circ.out",
+        },
+        "<+0.2"
+      );
+    }
   }, []);
 
   return (

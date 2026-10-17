@@ -4,6 +4,21 @@ import { projects } from "../constants";
 import { useEffect, useRef, useState } from "react";
 import { gsap, useGSAP } from "../lib/gsap";
 
+// Intrinsic dimensions of each project image — lets the browser reserve the
+// correct box for the lazy-loaded mobile cards instead of collapsing to 0
+// and shifting layout when each image arrives (CLS).
+const IMAGE_DIMS = {
+  "/assets/projects/wasla.webp": [1900, 937],
+  "/assets/projects/cyrus.webp": [1870, 824],
+  "/assets/projects/tailgating.webp": [1900, 941],
+  "/assets/projects/3d-modelling.webp": [1887, 941],
+  "/assets/projects/nedx.webp": [1894, 941],
+  "/assets/projects/nedswiss.webp": [1884, 939],
+  "/assets/projects/agl-invoice.webp": [1891, 946],
+  "/assets/projects/qalam.webp": [1018, 938],
+  "/assets/projects/translaxable.webp": [661, 702],
+};
+
 const Works = () => {
   const overlayRefs = useRef([]);
   const previewRef = useRef(null);
@@ -182,6 +197,8 @@ const Works = () => {
                     alt=""
                     loading="lazy"
                     decoding="async"
+                    width={IMAGE_DIMS[project.image]?.[0]}
+                    height={IMAGE_DIMS[project.image]?.[1]}
                     className="block h-auto max-h-[280px] w-full object-cover object-top"
                   />
                 </div>

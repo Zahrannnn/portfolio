@@ -63,26 +63,19 @@
     <link rel="describedby" href="/agents.json" />
     <link rel="alternate" type="text/markdown" href="/llms.txt" title="Markdown for agents" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.gstatic.com" />
 
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap"
-    /></noscript>
+    <!-- Iconify icons are fetched from the API at runtime (Tools/Works/QuoteBand) -->
+    <link rel="preconnect" href="https://api.iconify.design" crossorigin />
+    <link rel="dns-prefetch" href="https://api.iconify.design" />
 
-    <link rel="preload" href="/fonts/amiamie/ttf/Amiamie-Regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/amiamie/ttf/Amiamie-Light.ttf" as="font" type="font/ttf" crossorigin />
+    <!-- Hero-critical faces only: subtitle renders Light (300), the H1 resolves to Black (900).
+         Keep these URLs in sync with the first src entry of the matching @font-face in src/index.css. -->
+    <link rel="preload" href="/fonts/amiamie/woff2/Amiamie-Light.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/amiamie/woff2/Amiamie-Black.woff2" as="font" type="font/woff2" crossorigin />
 
-    <link rel="preload" href="/models/Planet.glb" as="fetch" crossorigin="anonymous" />
+    <link rel="preload" href="/models/Planet.glb" as="fetch" fetchpriority="low" crossorigin="anonymous" />
 
     <script type="application/ld+json">
       {

@@ -1,8 +1,13 @@
 import { useRef } from "react";
 import { toolsData } from "../constants";
-import { gsap, ScrollTrigger, SplitText, useGSAP } from "../lib/gsap";
+import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap";
+// SplitText is only needed by this (lazy, below-the-fold) section — importing it
+// here instead of lib/gsap.js keeps its bytes out of the eager gsap chunk.
+import { SplitText } from "gsap/SplitText";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+
+gsap.registerPlugin(SplitText);
 
 const Tools = () => {
   const sectionRef = useRef(null);

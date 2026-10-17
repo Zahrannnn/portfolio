@@ -1,16 +1,17 @@
 /*
 	Installed from https://reactbits.dev/ts/tailwind/
+	Perf-tuned: GSAP quickTo writes transforms directly (zero React re-renders
+	per mousemove) and the anchor rect is cached instead of read every event.
 */
 
-import React, { useState, useEffect, useRef, ReactNode, HTMLAttributes } from "react";
+import { useEffect, useRef, ReactNode, HTMLAttributes } from "react";
+import { gsap } from "../../../lib/gsap";
 
 interface MagnetProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   padding?: number;
   disabled?: boolean;
   magnetStrength?: number;
-  activeTransition?: string;
-  inactiveTransition?: string;
   wrapperClassName?: string;
   innerClassName?: string;
 }
@@ -20,26 +21,35 @@ const Magnet: React.FC<MagnetProps> = ({
   padding = 100,
   disabled = false,
   magnetStrength = 2,
-  activeTransition = "transform 0.3s ease-out",
-  inactiveTransition = "transform 0.5s ease-in-out",
   wrapperClassName = "",
   innerClassName = "",
   ...props
 }) => {
-  const [isActive, setIsActive] = useState<boolean>(false);
-  const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const magnetRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = magnetRef.current;
+    const inner = innerRef.current;
+    if (!el || !inner) return;
+
     if (disabled) {
-      setPosition({ x: 0, y: 0 });
+      gsap.to(inner, { x: 0, y: 0, duration: 0.5, ease: "power2.out" });
       return;
     }
 
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!magnetRef.current) return;
+    // The anchor never transforms, so its rect only goes stale on scroll/resize.
+    let rect: DOMRect | null = null;
+    const invalidateRect = () => {
+      rect = null;
+    };
 
-      const { left, top, width, height } = magnetRef.current.getBoundingClientRect();
+    const xTo = gsap.quickTo(inner, "x", { duration: 0.4, ease: "power3.out" });
+    const yTo = gsap.quickTo(inner, "y", { duration: 0.4, ease: "power3.out" });
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!rect) rect = el.getBoundingClientRect();
+      const { left, top, width, height } = rect;
       const centerX = left + width / 2;
       const centerY = top + height / 2;
 
@@ -47,23 +57,23 @@ const Magnet: React.FC<MagnetProps> = ({
       const distY = Math.abs(centerY - e.clientY);
 
       if (distX < width / 2 + padding && distY < height / 2 + padding) {
-        setIsActive(true);
-        const offsetX = (e.clientX - centerX) / magnetStrength;
-        const offsetY = (e.clientY - centerY) / magnetStrength;
-        setPosition({ x: offsetX, y: offsetY });
+        xTo((e.clientX - centerX) / magnetStrength);
+        yTo((e.clientY - centerY) / magnetStrength);
       } else {
-        setIsActive(false);
-        setPosition({ x: 0, y: 0 });
+        xTo(0);
+        yTo(0);
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("scroll", invalidateRect, { passive: true });
+    window.addEventListener("resize", invalidateRect);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", invalidateRect);
+      window.removeEventListener("resize", invalidateRect);
     };
   }, [padding, disabled, magnetStrength]);
-
-  const transitionStyle = isActive ? activeTransition : inactiveTransition;
 
   return (
     <div
@@ -73,12 +83,9 @@ const Magnet: React.FC<MagnetProps> = ({
       {...props}
     >
       <div
+        ref={innerRef}
         className={innerClassName}
-        style={{
-          transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-          transition: transitionStyle,
-          willChange: "transform",
-        }}
+        style={{ willChange: "transform" }}
       >
         {children}
       </div>

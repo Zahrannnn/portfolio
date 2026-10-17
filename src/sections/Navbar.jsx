@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { socials } from "../constants";
 import { gsap, useGSAP } from "../lib/gsap";
-import { Link } from "react-scroll";
+import { useLenis } from "lenis/react";
 import TextZoo from "../components/TextZoo";
 
 const Navbar = () => {
@@ -12,6 +12,7 @@ const Navbar = () => {
   const bottomLineRef = useRef(null);
   const tl = useRef(null);
   const iconTl = useRef(null);
+  const lenis = useLenis();
   const [isOpen, setIsOpen] = useState(false);
   const [showBurger, setShowBurger] = useState(true);
   useGSAP(() => {
@@ -114,16 +115,17 @@ const Navbar = () => {
           {["home", "services", "about", "work", "contact"].map(
             (section, index) => (
               <div key={index} ref={(el) => (linksRef.current[index] = el)}>
-                <Link
+                <a
                   className="transition-all duration-300 cursor-pointer hover:text-white"
-                  to={`${section}`}
-                  smooth
-                  offset={0}
-                  duration={2000}
-                  onClick={closeMenu}
+                  href={`#${section}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    closeMenu();
+                    lenis?.scrollTo(`#${section}`);
+                  }}
                 >
                   <TextZoo text={section} />
-                </Link>
+                </a>
               </div>
             )
           )}
