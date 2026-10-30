@@ -10,7 +10,7 @@ Recruiters, hiring managers, and freelance clients who land on Mohamed Zahran’
 
 ## Product Purpose
 
-A personal portfolio that presents Mohamed as a frontend engineer at RICOH Europe (formerly Corelia), shipping product UIs and agentic systems. It should showcase selected projects and client sites, reinforce TypeScript / React / Next craft, and make contact effortless. Success looks like: accurate role and employer, trustworthy links, and a distinctive intro that does not feel like a generic AI template.
+A personal portfolio that presents Mohamed as a software engineer at RICOH Europe (formerly Corelia), shipping six enterprise systems end to end (React/Next.js front ends, NestJS and ASP.NET Core services) plus agentic AI systems in production. It should showcase selected projects and client sites, reinforce full-stack TypeScript / React / Next / Node / .NET craft, and make contact effortless. Success looks like: accurate role and employer that matches the Software Engineer resume, trustworthy links, and a distinctive intro that does not feel like a generic AI template.
 
 ## Brand Personality
 

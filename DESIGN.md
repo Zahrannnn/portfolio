@@ -23,6 +23,7 @@ Tokens live in `@theme` (`src/index.css`).
 | `--color-gold` | `#cfa355` | The single accent: dashes, pins, counters, quote glyphs, focus rings, star icon |
 | `--color-DarkLava` | `#393632` | Dark warm gray (404 page text, ghost text stroke `rgb(57 54 50 / 0.16)`) |
 | `--color-SageGray` | `#8b8b73` | 404 page accents |
+| `::selection` | gold bg + black text | Branded text selection, whole site |
 | Paper | `#f7f7f2` | Resume card surface |
 | PDF window grays | `#1c1c1e` shell · `#2a2a2c` title bar · `#454749` content | macOS viewer |
 | Traffic lights | `#ff5f57` / `#febc2e` / `#28c840` | PdfWindow only |
@@ -44,10 +45,10 @@ Scale & case conventions (utilities in `index.css`):
 
 | Utility | Scale | Usage |
 | --- | --- | --- |
-| `banner-text-responsive` | 68 → 152px | Chapter titles (uppercase) |
+| `banner-text-responsive` | `clamp(68px, 12vw, 200px)`, leading `0.53`, tracking `-0.02em` | Chapter titles (uppercase) |
 | `value-text-responsive` | 24 → 32px | Chapter description lines (uppercase) |
 | `contact-text-responsive` | 42 → 100px | Kinetic band lines |
-| `text-outline-ink` | 1.5px stroke `rgb(57 54 50 / 0.16)`, transparent fill | Ghost indices + backdrop words |
+| `text-outline-ink` | 1.5px stroke `rgb(57 54 50 / 0.16)`, transparent fill | Ghost indices + backdrop words (light chapters) |
 
 Tracking: kickers/labels `tracking-[0.25em–0.5em]` uppercase at 9–12px; arrows and dividers separate attribution parts. Quotes render sentence-case in Amiamie Light; everything else on headers is uppercase.
 
@@ -61,7 +62,7 @@ Single page, ordered; every chapter is `min-h-screen`-ish with `px-10` gutters a
 | 2 | ServiceSummary | — | light |
 | 3 | Services | `services` | black, `rounded-t-4xl` |
 | 4 | About | `about` | black, `rounded-b-4xl` (closes the black block) |
-| 5 | Tools | `tools` | light, `rounded-t-4xl` |
+| 5 | AIFlow | `ai` | light, `rounded-t-4xl` |
 | 6 | Works | `work` | black, `rounded-t-4xl` |
 | 7 | QuoteBand | `testimonials` | light (`bg-primary`), `rounded-t-4xl` |
 | 8 | Contact | `contact` | black, `rounded-t-4xl` |
@@ -99,9 +100,10 @@ Signature patterns:
 - **Hover sweep**: an `origin-left scale-x-0` layer sweeps to `scale-x-100` (`duration-300`), text color inverts (Works rows, ink-fill buttons).
 - **Genie window**: FLIP from origin rect — `x/y` center-delta + `scaleX/scaleY` stretch, bake layout on complete.
 - **3D tilt**: `quickTo` rotationX/Y clamped ±10°, `transformPerspective: 800/900`, elastic settle; sheen band tracks the cursor.
-- **Velocity skew**: track-level `skewX` from `getVelocity()` via proxy tween, clamped ±5° (Tools).
-- **Masked text**: SplitText `type: chars, mask: chars`, `yPercent: 120` rise on entry (Tools panel names).
+- **Velocity skew**: track-level `skewX` from `getVelocity()` via proxy tween, clamped ±5° (Works rows).
 - **Counters**: tabular `01 / N` + hairline progress rail driven by ScrollTrigger `onUpdate`.
+- **Loop dial** (`AIFlow`): dial column pinned beside the five step blocks — `ScrollTrigger` pin with `pinSpacing:false` mimics sticky (real CSS sticky is impossible here: the Lenis root wrapper is an overflow-x container), `lg`+ only; gold arc via scrubbed `strokeDashoffset` (`C = 2π·38` in a 100×100 viewBox), brand star rides the tip (`rotation 0→360`, `svgOrigin`), nodes light up and the center readout crossfades in `onUpdate` (`floor(progress·N)`); the arc closes into a full circle on Ship. Steps reveal via per-block `from` tweens; magnetic badges; receipts footer closes the chapter. Mobile: unpinned dial above the list. Reduced motion: closed loop, all nodes lit, readout on Ship.
+- **Scroll progress**: fixed 2px gold hairline, `scaleX` from Lenis progress (`ScrollProgress`), transform-only.
 
 Accessibility: transform/opacity only; `will-change` sparingly; `prefers-reduced-motion` gets static layouts and instant state swaps; keyboard focus rings gold (`focus-visible:outline-[color:var(--color-gold)]`).
 
@@ -110,7 +112,7 @@ Accessibility: transform/opacity only; `will-change` sparingly; `prefers-reduced
 | Component | Recipe |
 | --- | --- |
 | Chapter header | `AnimatedHeaderSection` — kicker, split-word title, rule, right-aligned description (`AnimatedTextLines`) |
-| Kicker row | small-caps + gold star-four icon, right-side gold counter `NN / label`, `border-b` hairline (Tools, QuoteBand) |
+| Kicker row | small-caps + gold star-four icon, right-side gold counter `NN / label`, `border-b` hairline (AIFlow, QuoteBand) |
 | Text link | `TextZoo` — dual stacked text, flips `±100%` on hover; place inside `<a>` |
 | Works row | index-free title + frameworks + `↗`; white sweep overlay on hover (desktop), floating `560×350` (16:10) cursor-follow preview (image projects only, fades on scroll); mobile: framed image card `max-h-[280px] object-cover object-top` |
 | Quote line | gold quote icon + Amiamie Light sentence + gold-dash attribution (role · project), parallax-drifted |
@@ -120,11 +122,14 @@ Accessibility: transform/opacity only; `will-change` sparingly; `prefers-reduced
 | Badge circle | gold `h-8–9 w-8–9` circle + black star-four icon (card pin, kicker) |
 | Ghost type | `text-outline-ink` at 10–24vw, `opacity ≤ 70%` |
 | Skeleton bars | `h-1.5 rounded-full black/10–15` rows with one gold bar |
+| AI-first loop dial | `AIFlow` — pinned SVG dial + five scrolling step blocks (Spec → Delegate → Review → Verify → Ship) + receipts footer; step badges are Iconify glyphs (Claude + Codex marks on Delegate); data in `src/constants/aiFlow.js` |
+| Scroll progress | fixed top hairline, gold, `scaleX` = Lenis progress |
 
 ## 8. Iconography & assets
 
 - Icons: Iconify at runtime — `mdi:star-four-points` (brand glyph), `lucide` set (arrows, download, check, quote, expand…). Colored brand marks for stack badges come from `logos:*` / `simple-icons:*`.
-- Assets: fonts `/fonts/amiamie/**`, hero model `/models/Planet.glb`, project shots `/assets/projects/*.webp` (16:10-crop friendly), stack marks `/assets/tools/*.webp`.
+- Assets: fonts `/fonts/amiamie/**`, hero model `/models/Planet.glb`, project shots `/assets/projects/*.webp` (16:10-crop friendly). Stack marks `/assets/tools/*.webp` are legacy (tools wall removed — AIFlow replaced it) and unreferenced.
+- OG image: rendered from `public/og-source.html` (1200×630, brand-true) — screenshot it over `npm run preview` and save over `public/og-image.jpg` when the identity changes.
 - Favicon: inline SVG "MZ" monogram (gold on black).
 
 ## 9. Copy conventions

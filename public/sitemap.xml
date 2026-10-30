@@ -9,8 +9,8 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://mzahran.tech/og-image.jpg</image:loc>
-      <image:title>Mohamed Zahran - Frontend Engineer</image:title>
-      <image:caption>Frontend engineer at RICOH Europe building product UIs, 3D web experiences, and agentic workflows with React, Next.js, and TypeScript</image:caption>
+      <image:title>Mohamed Zahran - Software Engineer</image:title>
+      <image:caption>Software engineer at RICOH Europe shipping six enterprise systems end to end: React and Next.js front ends, NestJS and .NET services, and agentic AI in production</image:caption>
     </image:image>
   </url>
 </urlset>

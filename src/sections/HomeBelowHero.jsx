@@ -1,7 +1,7 @@
 import ServiceSummary from "./ServiceSummary";
 import Services from "./Services";
 import About from "./About";
-import Tools from "./Tools";
+import AIFlow from "./AIFlow";
 import Works from "./Works";
 import QuoteBand from "./QuoteBand";
 import Contact from "./Contact";
@@ -15,7 +15,7 @@ import { createSectionRecede } from "../lib/motion";
 export default function HomeBelowHero() {
   // Deck handoffs: as each rounded sheet arrives, the section it covers
   // recedes — scale + dim, scroll-locked. Only on boundaries whose covered
-  // section has no pinned descendants (Tools pins) or fixed children (Works).
+  // section has no pinned descendants (AIFlow pins) or fixed children (Works).
   useGSAP(() => {
     createSectionRecede("#summary", "#services");
     createSectionRecede("#testimonials", "#contact");
@@ -26,7 +26,7 @@ export default function HomeBelowHero() {
       <ServiceSummary />
       <Services />
       <About />
-      <Tools />
+      <AIFlow />
       <Works />
       <QuoteBand />
       <Contact />

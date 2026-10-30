@@ -5,7 +5,7 @@
 [![Three.js](https://img.shields.io/badge/Three.js-R3F-000000?style=flat-square&logo=threedotjs&logoColor=white)](https://docs.pmnd.rs/react-three-fiber)
 [![Live](https://img.shields.io/badge/Live-mohamed--zahrann.vercel.app-111111?style=flat-square)](https://mzahran.tech)
 
-Personal portfolio for **Mohamed Zahran**, frontend engineer at RICOH Europe (formerly Corelia). Product UIs, marketplace systems, and agentic workflows — React, TypeScript, GSAP, and a Three.js hero.
+Personal portfolio for **Mohamed Zahran**, software engineer at RICOH Europe (formerly Corelia). Six enterprise systems in parallel, full-stack delivery, and agentic AI in production — React, TypeScript, Node.js, .NET, GSAP, and a Three.js hero.
 
 [Features](#features) • [Getting started](#getting-started) • [Scripts](#scripts) • [Structure](#project-structure) • [Stack](#stack)
 
@@ -23,7 +23,7 @@ A Vite + React single-page site with smooth scrolling (Lenis), scroll-driven mot
 - **Performance-minded WebGL** — Adaptive DPR, lighter mobile path (no Environment/shadows), progress gated on real asset load
 - **Works & clients** — CRM, marketplace, storefront, and freelance sites with live links
 - **Motion** — GSAP ScrollTrigger sections, Framer Motion accents, Lenis smooth scroll
-- **SEO** — meta tags and JSON-LD oriented to frontend engineering at RICOH Europe
+- **SEO** — meta tags and JSON-LD oriented to software engineering at RICOH Europe
 
 ## Prerequisites
 
@@ -63,8 +63,8 @@ portfolio/
 │   └── models/          # Planet.glb (hero)
 ├── src/
 │   ├── components/      # Shared UI, motion, ModelSpinner
-│   ├── constants/       # Projects, services, socials, tools
-│   ├── sections/        # Hero, Works, About, Contact, …
+│   ├── constants/       # Projects, services, socials, AI loop
+│   ├── sections/        # Hero, AIFlow, Works, About, Contact, …
 │   ├── config/seo.js
 │   ├── App.jsx
 │   └── main.jsx

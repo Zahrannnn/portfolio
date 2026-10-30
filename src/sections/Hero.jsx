@@ -15,9 +15,9 @@ const Hero = () => {
   const contentRef = useRef(null);
   const figureRef = useRef(null);
   const [modelReady, setModelReady] = useState(false);
-  const text = `Frontend engineer at RICOH Europe.
-   Product UIs, marketplace systems,
-    and agentic workflows in TypeScript.`;
+  const text = `Software engineer at RICOH Europe.
+   Enterprise systems, end to end:
+    TypeScript, Node.js, .NET, agentic AI.`;
 
   // Exit choreography: the copy lifts away and fades while the planet lags
   // behind at a slower rate — two-speed parallax makes the hero sink under

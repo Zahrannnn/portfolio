@@ -3,14 +3,14 @@ import { AnimatedTextLines } from "../components/AnimatedTextLines";
 import { gsap, useGSAP } from "../lib/gsap";
 
 const About = () => {
-  const text = `Frontend engineer at RICOH Europe
-    Crafting product UIs and agentic systems
-    with TypeScript across the stack`;
-  const aboutText = `I’m Mohamed Zahran, a frontend engineer at RICOH Europe (formerly Corelia).
-    I focus on system design, marketplace architecture, and shipping polished React and Next.js interfaces.
-    Day to day that means TypeScript, performance-minded UI, GSAP and Framer Motion when motion earns its place,
-    and agentic tooling when it helps teams move faster.
-    I’ve built multi-tenant CRMs, healthcare marketplaces, Arabic RTL storefronts, and client sites across Egypt and Europe.
+  const text = `Software engineer at RICOH Europe
+    Building enterprise systems end to end
+    from React front ends to .NET services`;
+  const aboutText = `I’m Mohamed Zahran, a software engineer at RICOH Europe (formerly Corelia).
+    I ship enterprise systems end to end: six production systems in parallel, from technical design through deployment and stabilization.
+    That means React 19 and Next.js front ends, NestJS and ASP.NET Core services, PostgreSQL, MongoDB, and SQL Server underneath — with tested boundaries and performance-minded UI throughout.
+    GSAP and Framer Motion when motion earns its place, and agentic tooling when it helps teams move faster.
+    I’ve built multi-tenant CRMs, government healthcare portals, Arabic RTL storefronts, and AI pipelines running in production across Egypt and Europe.
     Let’s connect and build something that feels intentional.`;
   useGSAP(() => {
     gsap.to("#about", {

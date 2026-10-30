@@ -4,23 +4,28 @@ export const seoConfig = {
   siteUrl: "https://mzahran.tech",
   author: "Mohamed Zahran",
 
-  defaultTitle: "Mohamed Zahran - Frontend Engineer at RICOH Europe",
+  defaultTitle: "Mohamed Zahran - Software Engineer at RICOH Europe",
   titleTemplate: "%s | Mohamed Zahran",
   defaultDescription:
-    "Frontend engineer at RICOH Europe (formerly Corelia). Building product UIs, marketplace systems, and agentic workflows with React, Next.js, TypeScript, and thoughtful motion.",
+    "Software engineer at RICOH Europe (formerly Corelia). Six enterprise systems in parallel: React and Next.js front ends, NestJS and ASP.NET Core services, PostgreSQL and MongoDB, and agentic AI workflows in production.",
 
   keywords: [
     "Mohamed Zahran",
-    "Frontend Engineer",
+    "Software Engineer",
+    "Full Stack Engineer",
     "RICOH Europe",
     "React Developer",
     "Next.js Developer",
     "TypeScript",
+    "NestJS",
+    "ASP.NET Core",
+    "Node.js",
+    "PostgreSQL",
+    "LangGraph",
     "Three.js",
     "GSAP",
     "Portfolio",
     "Egypt Developer",
-    "UI/UX",
     "Agentic systems",
   ],
 
@@ -36,7 +41,7 @@ export const seoConfig = {
     url: "https://mzahran.tech/og-image.jpg",
     width: 1200,
     height: 630,
-    alt: "Mohamed Zahran - Frontend Engineer Portfolio",
+    alt: "Mohamed Zahran - Software Engineer Portfolio",
   },
 
   themeColor: "#06d6a0",
@@ -48,9 +53,9 @@ export const seoConfig = {
       "@type": "Person",
       name: "Mohamed Zahran",
       alternateName: "Mohamed Osama Zahran",
-      jobTitle: "Frontend Engineer",
+      jobTitle: "Software Engineer",
       description:
-        "Frontend engineer at RICOH Europe (formerly CORELIA) building product UIs, real-time dashboards, 3D web experiences, and agentic workflows with React, Next.js, and TypeScript.",
+        "Software engineer at RICOH Europe (formerly CORELIA) shipping six production enterprise systems in parallel: React and Next.js front ends, NestJS and ASP.NET Core services, real-time dashboards, 3D web experiences, and agentic AI workflows.",
       url: "https://mzahran.tech",
       image: "https://mzahran.tech/og-image.jpg",
       email: "mailto:info@mzahran.tech",
@@ -66,21 +71,28 @@ export const seoConfig = {
         "https://www.instagram.com/zahranzone/",
       ],
       knowsAbout: [
-        "JavaScript",
         "TypeScript",
+        "JavaScript",
         "React",
         "Next.js",
         "React Three Fiber",
         "Three.js",
         "Redux Toolkit",
         "TanStack Query",
-        "Frontend Development",
+        "Node.js",
+        "NestJS",
+        "ASP.NET Core",
+        "PostgreSQL",
+        "MongoDB",
+        "SQL Server",
+        "REST API Design",
+        "Software Architecture",
+        "LangGraph",
         "GSAP",
         "Framer Motion",
         "Tailwind CSS",
         "Web Accessibility",
         "RTL and Internationalization",
-        "UI/UX Design",
       ],
       alumniOf: {
         "@type": "CollegeOrUniversity",
@@ -97,7 +109,7 @@ export const seoConfig = {
       "@type": "WebSite",
       name: "Mohamed Zahran Portfolio",
       description:
-        "Portfolio of Mohamed Zahran, frontend engineer at RICOH Europe.",
+        "Portfolio of Mohamed Zahran, software engineer at RICOH Europe.",
       url: "https://mzahran.tech",
       author: {
         "@type": "Person",
@@ -111,37 +123,37 @@ export const seoConfig = {
 
   pages: {
     home: {
-      title: "Mohamed Zahran - Frontend Engineer at RICOH Europe",
+      title: "Mohamed Zahran - Software Engineer at RICOH Europe",
       description:
-        "Frontend engineer at RICOH Europe. Product UIs, marketplace architecture, and agentic systems with React, Next.js, and TypeScript.",
+        "Software engineer at RICOH Europe. Six enterprise systems in parallel: React and Next.js front ends, NestJS and .NET services, and agentic AI in production.",
       path: "/",
       priority: 1.0,
     },
     services: {
-      title: "Services - Frontend Development & Interactive Experiences",
+      title: "Services - Full-Stack Engineering, Design Systems & Agentic AI",
       description:
-        "Frontend development, UI/UX, modern web architecture, and interactive experiences with React, Next.js, GSAP, and Three.js.",
+        "Full-stack product engineering, frontend architecture and design systems, backend APIs and integrations, and agentic AI systems with React, Next.js, NestJS, and ASP.NET Core.",
       path: "/#services",
       priority: 0.8,
     },
     about: {
-      title: "About Mohamed Zahran - Frontend Engineer",
+      title: "About Mohamed Zahran - Software Engineer",
       description:
-        "Frontend engineer at RICOH Europe (formerly Corelia), focused on system design, TypeScript, and shipping polished product interfaces.",
+        "Software engineer at RICOH Europe (formerly Corelia), shipping six production systems end to end: TypeScript, React, Next.js, NestJS, and ASP.NET Core.",
       path: "/#about",
       priority: 0.8,
     },
     work: {
-      title: "Portfolio Projects - Product UIs & Client Work",
+      title: "Portfolio Projects - Enterprise Systems & Client Work",
       description:
-        "Selected projects including Wasla CRM, Nabdh, RICOH Europe 3D work, OZ Storefront, and freelance client sites.",
+        "Selected projects including RICOH Europe systems, Wasla CRM, MAC-Egypt, Nabdh, government healthcare portals, and agentic AI pipelines.",
       path: "/#work",
       priority: 0.9,
     },
     contact: {
       title: "Contact Mohamed Zahran",
       description:
-        "Get in touch for frontend engineering, product UI work, or collaborations.",
+        "Get in touch for software engineering, full-stack product work, or collaborations.",
       path: "/#contact",
       priority: 0.7,
     },

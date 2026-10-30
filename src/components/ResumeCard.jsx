@@ -185,7 +185,7 @@ const ResumeCard = () => {
                 M. ZAHRAN
               </h3>
               <p className="mt-1 text-[9px] uppercase tracking-[0.32em] text-black/50">
-                Frontend Engineer
+                Software Engineer
               </p>
               <div className="mt-3 h-px w-full bg-black/15" />
 
@@ -204,7 +204,7 @@ const ResumeCard = () => {
               {/* Footer strip */}
               <div className="mt-4 flex items-center justify-between border-t border-black/10 pt-3">
                 <span className="text-[9px] uppercase tracking-[0.3em] text-black/50">
-                  PDF · 1 page
+                  PDF · 4 pages
                 </span>
                 <Icon icon="lucide:file-text" className="h-4 w-4 text-black/40" />
               </div>

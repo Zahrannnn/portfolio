@@ -34,9 +34,9 @@ export const projects = [
   },
   {
     id: 3,
-    name: "Medical System (gov UI)",
+    name: "Medical System — Gov Healthcare Insurance Portal",
     description:
-      "Government medical system UI. Collaborator on the TypeScript frontend with production deployment.",
+      "Live government healthcare insurance portal with citizen, doctor, and admin portals. Built the admin verification workflow across 4 phases, the doctor clinical workspace, and the citizen application experience with a 2-developer team (40 of 59 commits).",
     href: "https://medical-system-gov.vercel.app",
     image: "",
     frameworks: [
@@ -66,7 +66,7 @@ export const projects = [
     id: 5,
     name: "Tailgating Detection System",
     description:
-      "Production frontend for real-time tailgating anomaly detection with live MJPEG video streaming, license plate OCR, MOT API integration, role-based access control, and a historical incident dashboard.",
+      "Real-time surveillance dashboard shipped at RICOH Europe: live MJPEG channel streaming, license-plate OCR workflows, anomaly and history views, role-based access, and audit trails, wired across three OpenAPI-documented REST APIs.",
     href: "https://github.com/Zahrannnn/tailgating-frontend",
     image: "/assets/projects/tailgating.webp",
     frameworks: [
@@ -175,9 +175,9 @@ export const projects = [
   },
   {
     id: 11,
-    name: "AGL Invoice Management System",
+    name: "AGL Invoice Management — SharePoint → AS400 Pipeline",
     description:
-      "Full invoice lifecycle management system with creation, editing, filtering, and status tracking. Built with reusable form components, Zod validation, and animated transitions.",
+      "Invoice-processing pipeline shipped at RICOH Europe: scanned invoices pulled from SharePoint, OCR extraction of fields and line items, a side-by-side document-vs-data verification UI, then validated auto-submission to the enterprise AS400 API.",
     href: "https://github.com/Zahrannnn",
     image: "/assets/projects/agl-invoice.webp",
     frameworks: [
@@ -302,6 +302,50 @@ export const projects = [
     frameworks: [
       { id: 1, name: "Frontend" },
       { id: 2, name: "Client work" },
+    ],
+  },
+  {
+    id: 22,
+    name: "agentic-shop — Agentic AI Shopping System",
+    description:
+      "Multi-agent shopping pipeline (LangGraph) that turns a one-sentence goal into ranked products, a conversational answer, and a validated UI plan rendered client-side over SSE streaming. Deterministic product scorer with Pydantic v2 contracts and 504 passing tests in offline mock mode.",
+    href: "https://github.com/Zahrannnn/agentic-shop",
+    image: "",
+    frameworks: [
+      { id: 1, name: "Python" },
+      { id: 2, name: "FastAPI" },
+      { id: 3, name: "LangGraph" },
+      { id: 4, name: "Pydantic v2" },
+      { id: 5, name: "SSE" },
+    ],
+  },
+  {
+    id: 23,
+    name: "Meapal LogBook — RICOH/Corelia Activity Platform",
+    description:
+      "Daily activity log for RICOH/Corelia teams: calendar-driven pay-period tracking with pace markers, work streaks that honor Fri/Sat rest days, and three role surfaces (employee, project manager, admin). Optimistic-everything UX with undo windows, crash recovery, and per-browser draft resumption.",
+    href: "https://github.com/Zahrannnn/meapal-logbook",
+    image: "",
+    frameworks: [
+      { id: 1, name: "React 19" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "TanStack Query" },
+      { id: 4, name: "Zod 4" },
+      { id: 5, name: "Tailwind CSS v4" },
+    ],
+  },
+  {
+    id: 24,
+    name: "Gym Management API",
+    description:
+      "Single-tenant gym subscription API with cryptographic QR check-in: atomic session deduction under concurrency (SQL applocks + conditional updates), time-based and per-sale credit subscriptions, RFC 7807 errors, and an xUnit test suite.",
+    href: "https://github.com/Zahrannnn/Gym-Management",
+    image: "",
+    frameworks: [
+      { id: 1, name: "ASP.NET Core 8" },
+      { id: 2, name: "EF Core" },
+      { id: 3, name: "SQL Server" },
+      { id: 4, name: "xUnit" },
     ],
   },
 ];

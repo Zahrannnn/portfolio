@@ -125,12 +125,18 @@ body {
   font-family: var(--font-amiamie);
 }
 
+/* Branded selection — gold sheet, ink text (contrast ≈ 9:1) */
+::selection {
+  background: var(--color-gold);
+  color: black;
+}
+
 @utility clip-path {
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
 @utility banner-text-responsive {
-  @apply text-[68px] sm:text-[118px] md:text-[126px] lg:text-[152px] leading-9 sm:leading-16 lg:leading-20;
+  @apply text-[clamp(68px,12vw,200px)] leading-[0.53] tracking-[-0.02em];
 }
 
 @utility value-text-responsive {

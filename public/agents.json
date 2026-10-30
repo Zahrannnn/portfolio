@@ -3,7 +3,7 @@
   "name": "Mohamed Zahran",
   "fullName": "Mohamed Osama Zahran",
   "type": "person",
-  "role": "Frontend Engineer",
+  "role": "Software Engineer",
   "employer": "RICOH Europe",
   "location": "Cairo, Egypt",
   "timezone": "Africa/Cairo",
@@ -15,24 +15,25 @@
     "linkedin": "https://www.linkedin.com/in/mohamed-zahran-383859222/",
     "instagram": "https://www.instagram.com/zahranzone/"
   },
-  "summary": "Frontend engineer at RICOH Europe (formerly CORELIA) building production interfaces with React, Next.js, and TypeScript: real-time dashboards, 3D web experiences with React Three Fiber, Arabic RTL/i18n product UIs, and agentic workflows. Previously built multilingual CRM dashboards and marketing sites for NedSwiss (Switzerland), and led the frontend track of GDSC at Shorouk Academy teaching 50+ students.",
+  "summary": "Software engineer at RICOH Europe (formerly CORELIA) shipping six production enterprise systems in parallel, end to end: React 19 and Next.js front ends, NestJS and ASP.NET Core services, PostgreSQL, MongoDB, and SQL Server. Builds real-time dashboards, 3D web experiences with React Three Fiber, Arabic RTL/i18n product UIs, and agentic AI systems (LangGraph pipelines, LLM tool-calling with SSE streaming) gated by automated test suites. Previously full-stack engineer for NedSwiss (Switzerland), and frontend lead of GDSC at Shorouk Academy teaching 50+ students.",
   "experience": [
     {
-      "title": "Front-End Developer",
+      "title": "Full Stack Engineer",
       "company": "RICOH Europe",
       "location": "Maadi, Cairo",
       "start": "2025-11",
       "end": "present",
       "highlights": [
-        "Ships production frontend systems in parallel under the CORELIA program for cross-regional European operations",
+        "Owns full-stack delivery across six production enterprise systems in parallel under the CORELIA program: technical design through implementation, testing, deployment, and stabilization",
         "3D Building & Space Viewer: Dollhouse/Panorama/Split modes with room-aware navigation (React 19, React Three Fiber)",
         "Tailgating Detection System: real-time anomaly dashboard with live MJPEG streams and license-plate OCR workflows",
-        "AGL Invoice Management: OCR-backed invoice verification UI over SharePoint and AS400",
-        "Qalam Vision: Arabic/multilingual NLP keyword-extraction interface integrating Label Studio"
+        "AGL Invoice Management: OCR-backed invoice verification pipeline over SharePoint and AS400",
+        "RicohFacturation: supplier invoice control platform in Blazor WebAssembly + ASP.NET Core with PostgreSQL",
+        "Authored the team's Next.js frontend boilerplate: typed routes, Zod boundary guards, Vitest/Playwright, Docker behind Nginx via GitLab CI"
       ]
     },
     {
-      "title": "Front-End Developer",
+      "title": "Full Stack Engineer",
       "company": "NedSwiss",
       "location": "Remote, Switzerland",
       "start": "2025-02",
@@ -54,6 +55,8 @@
   "skills": [
     "TypeScript",
     "JavaScript (ES6+)",
+    "Python",
+    "SQL",
     "React 19",
     "Next.js 15/16",
     "Redux Toolkit",
@@ -61,6 +64,17 @@
     "TanStack Query/Table/Form",
     "React Three Fiber",
     "Three.js",
+    "Node.js",
+    "NestJS",
+    "ASP.NET Core",
+    "PostgreSQL",
+    "MongoDB",
+    "SQL Server",
+    "Prisma",
+    "SignalR/WebSockets",
+    "LangGraph",
+    "FastAPI",
+    "Stripe/Paymob",
     "GSAP",
     "Framer Motion",
     "Lenis",

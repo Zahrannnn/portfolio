@@ -1,78 +1,78 @@
 // Services offered
 export const servicesData = [
   {
-    title: "Frontend Development",
+    title: "Full-Stack Product Engineering",
     description:
-      "Your digital presence deserves cutting-edge performance and stunning design. I build lightning-fast Next.js applications with server-side rendering, optimized performance, and pixel-perfect responsive interfaces that convert visitors into customers.",
+      "Features that reach production, not prototypes. I build and ship complete slices of product: React 19 and Next.js front ends, NestJS and ASP.NET Core services, relational and non-relational databases underneath — with tested boundaries, CI, and deployment included.",
     items: [
       {
-        title: "Next.js Excellence",
-        description: "(App Router, SSR/SSG, API Routes, Server Components)",
+        title: "React & Next.js",
+        description: "(App Router, Server Components, SSR/SSG, TypeScript strict)",
       },
       {
-        title: "React Mastery",
-        description: "(TypeScript, Custom Hooks, State Management, Performance)",
+        title: "APIs & Services",
+        description: "(NestJS, ASP.NET Core, REST Contracts, JWT + RBAC Auth)",
       },
       {
-        title: "Performance Optimization",
-        description: "(Core Web Vitals, Image Optimization, Bundle Analysis)",
+        title: "Data & Persistence",
+        description: "(PostgreSQL, MongoDB, SQL Server, Prisma, EF Core)",
       },
     ],
   },
   {
-    title: "UI/UX Design & Development",
+    title: "Frontend Craft & Design Systems",
     description:
-      "Beautiful interfaces that actually work. I transform complex user journeys into intuitive experiences, combining modern design principles with accessibility standards to create interfaces that users love and businesses profit from.",
+      "Interfaces that feel intentional and stay fast under real data. Component libraries, design systems, and performance work that keeps dashboards, storefronts, and product UIs smooth — accessible by default, bilingual and RTL-ready when you need it.",
     items: [
       {
         title: "Design Systems",
-        description: "(Component Libraries, Figma to Code, Brand Consistency)",
+        description: "(Shadcn / Radix, Component Libraries, Figma to Code)",
       },
       {
-        title: "User Experience",
-        description: "(Wireframing, Prototyping, User Testing, Conversion Optimization)",
+        title: "Performance",
+        description: "(Core Web Vitals, Bundle Analysis, Code Splitting)",
       },
       {
-        title: "Responsive Design",
-        description: "(Mobile-First, Cross-Browser, Accessibility Compliance)",
-      },
-    ],
-  },
-  {
-    title: "Modern Web Architecture",
-    description:
-      "Scalable frontend architectures that grow with your business. I implement cutting-edge patterns like server components, micro-frontends, and JAMstack to deliver blazing-fast user experiences with maintainable codebases.",
-    items: [
-      {
-        title: "Server Components",
-        description: "(React Server Components, Streaming, Data Fetching)",
-      },
-      {
-        title: "State Management",
-        description: "(Zustand, Redux Toolkit, React Query, Context API)",
-      },
-      {
-        title: "Build Optimization",
-        description: "(Webpack, Vite, Code Splitting, Tree Shaking)",
+        title: "Accessibility & i18n",
+        description: "(WCAG, RTL Layouts, next-intl, Arabic-first Products)",
       },
     ],
   },
   {
-    title: "Interactive Experiences",
+    title: "Backend & Integrations",
     description:
-      "Bring your brand to life with immersive web experiences. From smooth animations to 3D visualizations, I create engaging interfaces that captivate users and make your product unforgettable with slick animations using GSAP and Framer Motion.",
+      "Services that talk to anything: payment gateways, legacy enterprise systems, and real-time channels. I integrate Stripe and Paymob billing, AS400 and SharePoint pipelines, SignalR and WebSocket delivery — with background jobs, audit trails, and reliability built in.",
     items: [
       {
-        title: "Animation Libraries",
-        description: "(GSAP, Framer Motion, React Spring, CSS Animations)",
+        title: "Payments & Billing",
+        description: "(Stripe, Paymob, Webhooks, Subscription Flows)",
       },
       {
-        title: "3D Web Graphics",
-        description: "(Three.js, React Three Fiber, WebGL, 3D Models)",
+        title: "Enterprise Integrations",
+        description: "(AS400, SharePoint, OCR Pipelines, SignalR Real-Time)",
       },
       {
-        title: "Micro-Interactions",
-        description: "(Hover Effects, Loading States, Transition Design)",
+        title: "Jobs & Reliability",
+        description: "(Hangfire, WebSockets, Audit Logging, Background Work)",
+      },
+    ],
+  },
+  {
+    title: "Agentic AI Systems",
+    description:
+      "AI features that ship, not demos. Multi-agent pipelines with LangGraph, LLM tool-calling with SSE streaming, and moderation services running live on HuggingFace Spaces — every one gated by automated test suites before it reaches production.",
+    items: [
+      {
+        title: "Multi-Agent Pipelines",
+        description: "(LangGraph, Tool-Calling, Structured Outputs)",
+      },
+      {
+        title: "LLM Streaming & Contracts",
+        description: "(SSE Streaming, Zod / Pydantic Validation, FastAPI)",
+      },
+      {
+        title: "AI-First Engineering",
+        description: "(Claude Code / Codex in the Loop, CI-Gated Merges)",
       },
     ],
   },

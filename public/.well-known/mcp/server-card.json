@@ -4,7 +4,7 @@
     "title": "Mohamed Zahran - Portfolio",
     "version": "1.0.0"
   },
-  "description": "Portfolio of Mohamed Zahran, frontend engineer at RICOH Europe. Exposes profile, experience, projects, resume, and contact data to AI agents.",
+  "description": "Portfolio of Mohamed Zahran, software engineer at RICOH Europe. Exposes profile, experience, projects, resume, and contact data to AI agents.",
   "transport": {
     "type": "webmcp",
     "endpoint": "https://mzahran.tech/",

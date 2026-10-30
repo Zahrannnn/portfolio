@@ -9,6 +9,7 @@ import Hero from "./sections/Hero";
 import ReactLenis, { useLenis } from "lenis/react";
 import NotFound from "./components/NotFound";
 import SEO from "./components/SEO";
+import ScrollProgress from "./components/ScrollProgress";
 import { gsap, ScrollTrigger } from "./lib/gsap";
 
 const HomeBelowHero = lazy(() => import("./sections/HomeBelowHero"));
@@ -72,6 +73,7 @@ function AppShell() {
       }}
     >
       <LenisScrollBridge />
+      <ScrollProgress />
       <Routes>
         <Route path="/" element={<MainContent />} />
         <Route path="*" element={<NotFound />} />

@@ -6,7 +6,7 @@ credentials, or authenticate to access any resource on mzahran.tech.
 ## Who this site is for
 
 Autonomous agents, assistants, and crawlers that want to answer questions
-about Mohamed Zahran (frontend engineer at RICOH Europe), fetch his resume,
+about Mohamed Zahran (software engineer at RICOH Europe), fetch his resume,
 or retrieve his contact details.
 
 ## Authentication requirements
